@@ -5,6 +5,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-font-family: 'Inter Tight', sans-serif;
+    ;
+    --main-color: rgb(10, 163, 186);
+    --body-background: #0079ff;
+    --text-color: #313131;
+}
+
+body {
+    font-family: var(--main-font-family);
+    color: var(--text-color);
+    background-color: var(--body-background);
+}
+
 /* Global style for links */
 a {
     text-decoration: none;
