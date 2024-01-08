@@ -53,3 +53,20 @@ function removeTeam() {
     // Remove the team element from the DOM
     this.parentElement.remove();
 }
+
+
+/**
+ * Enable or disable team deletion on the number of teams
+ */
+function toggleTeamDeletion(teamsAmount) {
+    let deleteElements = document.getElementsByClassName("delete-team")
+    if (teamsAmount <= 2) {
+        for (let element of deleteElements) {
+            element.setAttribute("hidden", true);
+        }
+    } else {
+        for (let element of deleteElements) {
+            element.removeAttribute('hidden');
+        }
+    }
+}
