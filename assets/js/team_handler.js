@@ -19,3 +19,16 @@ function getRandomName() {
     // Return the selected team name
     return team.name;
 }
+
+
+function addTeam() {
+    let teamsElement = document.getElementById("teams");
+
+    // Clone the first team element and set its text content to a random team name
+    let teamHtml = teamsElement.firstElementChild.cloneNode(true);
+    teamHtml.getElementsByClassName("team")[0].textContent = getRandomName();
+
+    // Add new team to DOM
+    teamsElement.appendChild(teamHtml)
+
+}
