@@ -170,3 +170,35 @@ window.addEventListener("load", function () {
     // Start observing changes in the 'teams' element
     teamsObserver.observe(teamsElement, teamsObserverConfig);
 })
+
+// Prevent navigation to next setup game stage, add teams to gameOptions
+// and continue the navigation.
+document.getElementById("next").addEventListener("click", function (event) {
+
+    // Prevent navigation
+    event.preventDefault();
+
+    // Create game options object to store data about game
+    let gameOptions = {
+        teams: [],
+    };
+
+    // Iterate through all teams' elements 
+    document.querySelectorAll("#teams .team").forEach(element => {
+
+        // Get team name 
+        const teamName = element.textContent;
+
+        // Add team name and team's score to the gameOptions
+        gameOptions.teams.push({
+            name: teamName,
+            score: 0
+        })
+    })
+
+    // Save the gameOptions in local storage
+    localStorage.setItem("gameOptions", JSON.stringify(gameOptions));
+
+    // Resume navigation
+    window.location.href = event.target.href;
+})
