@@ -70,3 +70,20 @@ function toggleTeamDeletion(teamsAmount) {
         }
     }
 }
+
+
+/**
+ * Enable or disable team addition based on the number of teams
+ */
+function toggleTeamAddition(teamsAmount) {
+    const addTeamClasses = document.getElementById("add-team").classList;
+    const isDisabled = addTeamClasses.contains("disabled")
+
+    if (teamsAmount < 6 && isDisabled) {
+        addTeamClasses.remove("disabled");
+    }
+
+    if (teamsAmount === 6 && !isDisabled) {
+        addTeamClasses.add("disabled");
+    }
+}
