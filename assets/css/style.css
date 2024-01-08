@@ -99,3 +99,19 @@ a {
     border-radius: 25px;
     margin-top: 30px;
 }
+
+
+/* STYLE FOR teams.html */
+.team-container {
+    padding: 10px 20px 10px 20px;
+}
+
+#add-team {
+    height: 30px;
+    background-color: var(--main-color);
+}
+
+#next {
+    height: 40px;
+    background-color: var(--block-background);
+}
