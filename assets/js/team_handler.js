@@ -32,3 +32,24 @@ function addTeam() {
     teamsElement.appendChild(teamHtml)
 
 }
+
+
+function removeTeam() {
+    const teams = JSON.parse(localStorage.getItem('teams'));
+    const teamElement = this.parentElement;
+    const teamName = teamElement.querySelector(".team").textContent;
+
+    // Update the 'taken' status of the corresponding team to false
+    for (const team of teams) {
+        if (team.name === teamName) {
+            team.taken = false;
+
+            // Save updated team status to local storage
+            localStorage.setItem("teams", JSON.stringify(teams));
+            break
+        }
+    }
+
+    // Remove the team element from the DOM
+    this.parentElement.remove();
+}
