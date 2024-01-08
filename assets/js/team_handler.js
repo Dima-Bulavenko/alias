@@ -112,3 +112,61 @@ const teamsObserver = new MutationObserver(function (mutationList, observer) {
         }
     }
 });
+
+
+// Wait for the window to load before executing the following code
+window.addEventListener("load", function () {
+    // Remove any existing "teams" data from localStorage
+    this.localStorage.removeItem("teams");
+
+    // Initialize an array of team objects with names and availability status
+    let teamsObjects = [
+        { name: "Thunderhawks", taken: false },
+        { name: "Galactic Tigers", taken: false },
+        { name: "Mystic Dragons", taken: false },
+        { name: "Quantum Quasars", taken: false },
+        { name: "Solar Sprints", taken: false },
+        { name: "Lunar Lynxes", taken: false },
+        { name: "Neon Nomads", taken: false },
+        { name: "Polar Prowess", taken: false },
+        { name: "Vortex Voyagers", taken: false },
+        { name: "Cosmic Comets", taken: false },
+        { name: "Velocity Vikings", taken: false },
+        { name: "Aurora Avengers", taken: false },
+        { name: "Nova Nomads", taken: false },
+        { name: "Astro Arrows", taken: false },
+        { name: "Blazing Bulls", taken: false },
+        { name: "Rapid Raptors", taken: false },
+        { name: "Eclipse Eagles", taken: false },
+        { name: "Fusion Foxes", taken: false },
+        { name: "Stellar Stingers", taken: false }
+    ];
+
+    // Store the array of team objects in localStorage as a JSON string
+    localStorage.setItem("teams", JSON.stringify(teamsObjects));
+
+    // Get elements with class 'team' and set their text content to random team names
+    let teamsElements = document.getElementsByClassName('team');
+    for (let team of teamsElements) {
+        let teamName = getRandomName();
+        team.textContent = teamName;
+    }
+
+    // Add Event listener to add new team
+    document.getElementById('add-team').addEventListener('click', addTeam);
+
+    // Add event listeners to the 'delete-team' buttons to handle team removal
+    let deleteTeamElements = document.getElementsByClassName("delete-team");
+    for (let deleteTeamElement of deleteTeamElements) {
+        deleteTeamElement.addEventListener('click', removeTeam)
+    }
+
+    // Get target element for observing
+    const teamsElement = document.getElementById('teams');
+
+    // Create config for observe mutations of adding and removing teams' children
+    const teamsObserverConfig = { childList: true };
+
+    // Start observing changes in the 'teams' element
+    teamsObserver.observe(teamsElement, teamsObserverConfig);
+})
