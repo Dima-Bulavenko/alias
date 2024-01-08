@@ -20,6 +20,11 @@ body {
     background-color: var(--body-background);
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /* Global style for links */
 a {
     text-decoration: none;
@@ -62,6 +67,7 @@ a {
     height: 100vh;
 }
 
+/* STYLE FOR index.html */
 /* logo style */
 #logo-container {
     width: 90px;
