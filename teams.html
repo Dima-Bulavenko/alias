@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/e212569926.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content" class=" flex-container flex-column justify-space-between">
+        <div class="flex-container flex-column">
+            <div id="teams">
+                <div class="team-container flex-container flex-container justify-space-between ">
+                    <div class="team"></div>
+                    <div class="delete-team" hidden><i class="fa-solid fa-minus"></i></div>
+                </div>
+                <div class="team-container flex-container justify-space-between">
+                    <div class="team"></div>
+                    <div class="delete-team" hidden><i class="fa-solid fa-minus"></i></div>
+                </div>
+            </div>
+            <div id="add-team" class="flex-container justify-center align-center"><i class="fa-solid fa-plus"></i></div>
+        </div>
+        <a href="./settings.html" id="next" class="flex-container justify-center align-center">Next</a>
+    </div>
+    <script src="./assets/js/team_handler.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
