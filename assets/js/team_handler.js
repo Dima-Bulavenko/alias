@@ -87,3 +87,28 @@ function toggleTeamAddition(teamsAmount) {
         addTeamClasses.add("disabled");
     }
 }
+
+
+// Observe changes in the 'teams' element using MutationObserver
+const teamsObserver = new MutationObserver(function (mutationList, observer) {
+    for (const mutation of mutationList) {
+
+        if (mutation.type === 'childList') {
+            const teamsAmount = mutation.target.children.length;
+
+            // Enable or disable team addition
+            toggleTeamAddition(teamsAmount);
+
+            // Enable or disable team deletion
+            toggleTeamDeletion(teamsAmount);
+
+            // Add remove event listener to newly added team
+            for (let newTeam of mutation.addedNodes) {
+                let deleteTeamElem = newTeam.getElementsByClassName("delete-team")[0];
+                deleteTeamElem.addEventListener("click", removeTeam)
+            }
+
+
+        }
+    }
+});
