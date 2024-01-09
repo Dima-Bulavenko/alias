@@ -119,9 +119,24 @@ project description
 [Back to top](<#contents>)
 
 ## Content
+
+* Custom range slider [w3schools.com](https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+
+* JavaScript MutationObserver [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)
+
+* Fonts [fonts.google.com](https://fonts.google.com/).
+
 [Back to top](<#contents>)
 
+
 ## Media
+
+* [Color palettes generator](https://coolors.co/)
+
+* Favicon and logo [icons8](https://icons8.com/icons)
+
+* Icons [Font Awesome](https://fontawesome.com/).
+
 [Back to top](<#contents>)
 
 # Acknowledgements
