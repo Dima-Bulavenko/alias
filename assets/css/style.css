@@ -135,3 +135,27 @@ a {
     padding-top: 3px;
 }
 
+/* Style for range input */
+.range-input {
+    /* Removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    height: 3px;
+    margin: 15px auto 15px auto;
+    border-radius: 1.5px;
+    max-width: 300px;
+    outline: none;
+    background: var(--text-color);
+    
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
