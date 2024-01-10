@@ -119,3 +119,19 @@ a {
     height: 40px;
     background-color: var(--block-background);
 }
+
+
+/* STYLE FOR setting.html */
+.setting-container {
+    border-bottom: 2px solid var(--text-color);
+    padding: 10px 10px 5px 10px;
+}
+
+.setting-description {
+    font-size: 10px;
+}
+
+.setting-value {
+    padding-top: 3px;
+}
+
