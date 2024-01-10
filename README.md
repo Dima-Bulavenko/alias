@@ -128,6 +128,8 @@ project description
 
 * CSS linear-gradient [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
 
+* Custom checkbox styles [alvarotrigo.com](https://alvarotrigo.com/blog/css-checkbox-styles/)
+
 
 [Back to top](<#contents>)
 
