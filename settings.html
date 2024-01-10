@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/e212569926.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Settings</title>
+</head>
+
+<body>
+    <div id="content" class=" flex-container flex-column justify-space-between">
+        <div class="settings">
+            <div class="setting-container flex-container flex-column justify-space-between">
+                <div class="setting-info flex-container justify-space-between align-start">
+                    <div class="setting-name">
+                        Word count
+                        <div class="setting-description">
+                            needed for victory
+                        </div>
+                    </div>
+                    <div class="setting-value"></div>
+                </div>
+                <input type="range" id="word-count" name="wordCount" class="range-input" min="10" max="150" step="5" value="30">
+            </div>
+            <div class="setting-container flex-container flex-column justify-space-between">
+                <div class="setting-info flex-container justify-space-between align-start">
+                    <div class="setting-name">
+                        Round duration
+                        <div class="setting-description">
+                            time in seconds
+                        </div>
+                    </div>
+                    <div class="setting-value"></div>
+                </div>
+                <input type="range" id="round-duration" name="roundDuration" class="range-input" min="10" max="120" step="5" value="60">
+            </div>
+            <div class="setting-container flex-container justify-space-between">
+                <div class="setting-info flex-container justify-space-between align-start">
+                    <div class="setting-name">
+                        Penalty for a miss
+                        <div class="setting-description">
+                            each missed word deducts one point
+                        </div>
+                    </div>
+                    <div class="setting-value"></div>
+                </div>
+                <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss" checked>
+            </div>
+            <div class="setting-container flex-container justify-space-between">
+                <div class="setting-info flex-container justify-space-between align-start">
+                    <div class="setting-name">
+                        Common final word
+                        <div class="setting-description">
+                            all teams can guess the last word
+                        </div>
+                    </div>
+                    <div class="setting-value"></div>
+                </div>
+                <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord" checked>
+            </div>
+            <div class="setting-container flex-container justify-space-between">
+                <div class="setting-info flex-container justify-space-between align-start">
+                    <div class="setting-name">
+                        Game sound
+                        <div class="setting-description">
+                            enable sound effects
+                        </div>
+                    </div>
+                    <div class="setting-value"></div>
+                </div>
+                <input type="checkbox" id="game-sound" class="checkbox-input" name="gameSound" checked>
+            </div>
+        </div>
+
+        <a href="#" id="next" class="flex-container justify-center align-center">Next</a>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/settings_handler.js"></script>
+
+</body>
+
+</html>
