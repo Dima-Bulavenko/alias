@@ -126,6 +126,9 @@ project description
 
 * Fonts [fonts.google.com](https://fonts.google.com/).
 
+* CSS linear-gradient [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
+
+
 [Back to top](<#contents>)
 
 
