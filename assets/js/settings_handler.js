@@ -24,7 +24,7 @@ function validateTeams() {
     const teams = JSON.parse(localStorage.getItem("gameOptions")).teams;
 
     // Validate teams
-    if (!Array.isArray(teams) ||  teams.length < 2) {
+    if (!Array.isArray(teams) || teams.length < 2) {
         // Prompt user
         let userConfirmation = confirm("No teams set up. Click OK to set up teams, or Cancel to return to the main page.");
 
@@ -69,6 +69,14 @@ window.addEventListener("DOMContentLoaded", function () {
     validateTeams();
 
     const rangeInput = document.querySelectorAll('.range-input');
+
+    document.querySelector("#next").addEventListener("click", function (event) {
+        event.preventDefault();
+            
+        saveSettings();
+
+        window.location.href = this.href;
+    })
 
     for (let input of rangeInput) {
 
