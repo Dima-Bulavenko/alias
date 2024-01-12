@@ -160,3 +160,73 @@ a {
     background: var(--main-color);
     border-radius: 50%;
 }
+
+/* Style for checkbox input */
+
+/* This class increases clickable area for checkbox input */
+.checkbox-label {
+   display: block;
+   height: 25px;
+   width: 30px;
+   cursor: pointer;
+   align-self: center;
+}
+
+.checkbox-input {
+    /* Remove default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+
+    outline: none;
+    position: relative;
+    height: 11px;
+    width: 5px;
+    margin-top: 5px;
+    border-radius: 25px;
+    cursor: pointer;    
+    transition: 0.5s;
+    background-color: var(--main-color-transparent);
+}
+
+.checkbox-input::before {
+    /* Styles for circle in checkbox input element */
+    content: "";
+    height: 16px;
+    width: 16px;
+    background-color: var(--element-off);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: -1px;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5);
+    transition: 0.5s;
+    animation: shadow-grow 0.2s linear 0.3s;
+}
+
+/* Animation to change box-shadow */
+@keyframes shadow-grow {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0px 0px 0px 5px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+    }
+    
+}
+.checkbox-input:checked {
+    width: 25px;
+}
+
+.checkbox-input:checked::before {
+    background-color: var(--main-color);
+    left: 12px;
+
+    /* Disable animation when element is checked */
+    animation: none
+}
+
