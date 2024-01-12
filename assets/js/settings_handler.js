@@ -38,6 +38,33 @@ function validateTeams() {
 }
 
 
+/**
+ * saveSettings function retrieves game options from local storage, updates settings based on user input, and saves it back to local storage.
+ */
+function saveSettings() {
+    // Retrieve game options from local storage and parse them into a JavaScript object
+    const gameOptions = JSON.parse(localStorage.getItem("gameOptions"));
+
+    // Initialize settings object in gameOptions
+    gameOptions.settings = {};
+
+    const settings = document.querySelectorAll("input");
+
+    for (let setting of settings) {
+        // If the input type is checkbox, save its checked state
+        if (setting.type === "checkbox") {
+            gameOptions.settings[setting.name] = setting.checked;
+        } 
+        // For other input types, save their current value
+        else {
+            gameOptions.settings[setting.name] = setting.value;
+        }
+    }
+
+    localStorage.setItem("gameOptions", JSON.stringify(gameOptions));
+}
+
+
 window.addEventListener("DOMContentLoaded", function () {
     validateTeams();
 
