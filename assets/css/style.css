@@ -230,3 +230,29 @@ a {
     animation: none
 }
 
+
+/* STYLE FOR categories.html */
+.categories {
+    height: 100%;
+}
+.category-container {
+    width: 100%;
+    padding: 20px 20px 20px 35%;
+    border-top: 2px solid var(--text-color);
+}
+
+.category-container:last-child {
+    border-bottom: 2px solid var(--text-color);
+}
+
+.category-name {
+    font-weight: 800;   
+    color: var(--main-color);
+}
+
+.category-description{
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color);
+}
