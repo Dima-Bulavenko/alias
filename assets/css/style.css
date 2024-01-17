@@ -12,6 +12,7 @@
     --main-color-transparent: rgba(10, 163, 186, 0.5);
     --body-background: #0079ff;
     --block-background: red;
+    --run-button-color: rgba(188, 220, 30, 0.804);
     --text-color: #313131;
 }
 
@@ -36,6 +37,13 @@ a {
 /* General classes */
 .main-background {
     background-color: var(--main-color);
+}
+
+.run-button {
+    background-color: var(--run-button-color);
+    height: 50px;
+    cursor: pointer;
+    border: none
 }
 
 /* Flex classes */
