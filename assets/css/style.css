@@ -264,3 +264,15 @@ a {
     font-weight: 500;
     color: var(--text-color);
 }
+
+
+/* STYLE FRO game.html */
+/* between-rounds section */
+.game-state {
+    height: 100%;
+}
+
+#stat-container {
+    background-color: var(--main-color);
+    padding: 20px 20px 10px 20px;
+}
