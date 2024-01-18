@@ -183,18 +183,17 @@ document.getElementById("next").addEventListener("click", function (event) {
         teams: [],
     };
 
-    // Iterate through all teams' elements 
-    document.querySelectorAll("#teams .team").forEach(element => {
+    // Iterate through all teams' elements
+    for ([index, element] of [...document.querySelectorAll("#teams .team")].entries()) {
 
-        // Get team name 
-        const teamName = element.textContent;
-
-        // Add team name and team's score to the gameOptions
+        // Add team objects to gameOptions and create its properties
         gameOptions.teams.push({
-            name: teamName,
+            name: element.textContent,
+            round: 1,
+            isTurn: index === 0 ? true : false,
             score: 0
         })
-    })
+    }
 
     // Save the gameOptions in local storage
     localStorage.setItem("gameOptions", JSON.stringify(gameOptions));
