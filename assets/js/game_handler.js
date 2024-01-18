@@ -110,20 +110,11 @@ function createWordList() {
 
 
 window.addEventListener("load", function () {
-    if (PerformanceNavigationTiming.type !== "reload") {
-        // Create new properties in gameOptions object
-        const gameOptions = getGameOptions();
-        
-        for ([index, team] of gameOptions.teams.entries()) {
-            team.round = 1;
+    const gameOptions = getGameOptions();
 
-            if (index === 0) {
-                team.isTurn = true;
-            } else {
-                team.isTurn = false;
-            }
-        }
-        setGameOptions(gameOptions);
+    // If the game options don't have a 'words' property, create a word list
+    if (!("words" in gameOptions)) {
+        createWordList();
     }
     
     setWordCount();
