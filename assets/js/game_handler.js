@@ -25,7 +25,7 @@ function toggleSectionById(id) {
     }
 }
 
-// ---------------
+// FUNCTIONS TO HANDLE THE "before-round" STAGE
 
 /**
  * Set a word count to the DOM
@@ -69,6 +69,18 @@ function setRoundInfo() {
         }
     }
 }
+
+
+/**
+ * Runs all function to set up the "before-round" stage
+ */
+function setupBeforeRoundStage(){
+    setWordCount();
+    setTeamStats();
+    setRoundInfo();
+}
+
+// ---------------------------------------------------------------
 
 
 /**
