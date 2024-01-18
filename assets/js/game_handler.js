@@ -14,14 +14,24 @@ function setGameOptions(obj) {
 
 }
 
-
-function toggleSectionById(id) {
-    const element = document.getElementById(id);
+/**
+ * Show sections when its state is "current" and hide when it's not
+ */
+function toggleSection() {
+    const gameOptions = getGameOptions();
     
-    if (element.style.display === "none") {
-        element.style.removeProperty("display");
-    } else {
-        element.style.display = "none";
+    for (let stage of gameOptions.stages) {
+        let stageElement = document.getElementById(stage.name);
+
+        if (!(stage.isCurrent)) {
+
+            // Hide the section if it's not current
+            stageElement.style.display = "none";
+        } else {
+            
+            // Show the section if it's current
+            stageElement.style.removeProperty("display");
+        }
     }
 }
 
