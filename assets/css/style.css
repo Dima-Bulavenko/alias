@@ -280,3 +280,27 @@ a {
     background-color: var(--main-color);
     padding: 20px 20px 10px 20px;
 }
+
+/* round section */
+#guessed-words, #missed-words {
+    width: 100vw;
+    padding: 10px 0;
+}
+
+#guessed-words {
+    background-color: var(--main-color);
+}
+
+#missed-words {
+    background-color: var(--element-off);
+}
+
+#control {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 800;
+    position: relative;
+}
