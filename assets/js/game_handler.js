@@ -128,11 +128,17 @@ window.addEventListener("load", function () {
     if (!("words" in gameOptions)) {
         createWordList();
     }
-    
-    setWordCount();
-    setTeamStats();
-    setRoundInfo();
-    
+
+    // If the game options don't have a 'stages' property, create it
+    if (!("stages" in gameOptions)) {
+        gameOptions.stages = [
+            {name: "before-round", isCurrent: true},
+            {name: "round", isCurrent: false},
+            {name: "after-round", isCurrent: false}
+        ]
+        setGameOptions(gameOptions);
+    }
+
     document.getElementById('run-round').addEventListener('click', function (event) {
         toggleSectionById("between-rounds")
     });
