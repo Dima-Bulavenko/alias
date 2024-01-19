@@ -35,6 +35,48 @@ function toggleSection() {
     }
 }
 
+/**
+* Toggles the current stage in the game options.
+* If the current stage is the last one, it sets the first stage as the current stage.
+* Otherwise, it sets the next stage as the current stage.
+*/
+function toggleStage() {
+    const gameOptions = getGameOptions();
+    let newStaged;
+    
+    for (let [index, stage] of gameOptions.stages.entries()) {
+        // If the stage is the current stage
+        if (stage.isCurrent) {
+
+            // Set the current stage's isCurrent property to false
+            stage.isCurrent = false;
+
+            // If the current stage is the last stage
+            if (index === gameOptions.stages.length - 1) {
+
+                // Set the first stage as the new current stage
+                newStaged = gameOptions.stages[0]; 
+            } else {
+
+                // Otherwise, set the next stage as the new current stage
+                newStaged = gameOptions.stages[index+1];
+            }
+
+            // Set the new current stage's isCurrent property to true
+            newStaged.isCurrent = true;
+
+            // Break the loop as we've found and updated the current stage
+            break;
+        }
+    }
+    // Update the game options with the new stages
+    setGameOptions(gameOptions);
+
+    // Toggle the game section
+    toggleSection();
+    
+}
+
 // FUNCTIONS TO HANDLE THE "before-round" STAGE
 
 /**
