@@ -203,6 +203,121 @@ function createControl() {
     return control;
 }
 
+
+/**
+ * Handle the swipe event of the swipe area
+ */
+function swipeHandler() {
+    // Get the swipe area element
+    const swipeAreaElement = document.getElementById("swipe-area");
+
+    // Get the control element which contains a word to guess
+    const control = swipeAreaElement.querySelector("#control");
+
+    // Help to calculate the swipe distance
+    let touchStartY;
+
+    // Id of the first touch
+    // It's used to prevent the swipe event from being triggered by other touches
+    let firstTouchId;
+
+    // The maximum distance of the swipe.
+    // Determine max distance of a swipe after that needed to run handleRound function
+    let maxSwipeDistance = 70;
+
+    /**
+     * Handle the touch start event 
+     */
+    function handleTouchStart(event) {
+        event.preventDefault();
+        
+        // If the first touch is undefined, set the first touch id
+        if (typeof firstTouchId === "undefined") {
+            firstTouchId = event.changedTouches[0].identifier;
+        }
+
+        // If the first touch is the same as the first touch id, set the touch start Y position
+        if (event.changedTouches[0].identifier === firstTouchId) {
+            touchStartY = event.changedTouches[0].pageY;
+            control.style.position = "relative";
+        }
+    }
+
+
+    /**
+     * Handle the touch move event 
+     */
+    function handleTouchMove(event) {
+        event.preventDefault();
+        [...event.changedTouches].forEach(touch => {
+
+            // Check whether a touch is the first touch
+            if (touch.identifier === firstTouchId) {
+
+                // Calculate the swipe distance of current touch
+                const swipeDistance = touch.pageY - touchStartY;
+
+                // If the swipe distance is greater than the maximum swipe distance, run a set of functions
+                if (Math.abs(swipeDistance) > maxSwipeDistance) {
+
+                    // Set delay to delay the running of handleRound function
+                    const delay = 0.2;
+                    const controlTop = parseInt(control.style.top);
+
+                    // Remove event listeners to prevent the swipe event from being triggered again
+                    swipeAreaElement.removeEventListener("touchstart", handleTouchStart);
+                    swipeAreaElement.removeEventListener("touchmove", handleTouchMove);
+                    swipeAreaElement.removeEventListener("touchend", handleTouchEnd);
+
+                    // Set transition to animate the swipe of control element before running handleRound function
+                    control.style.transition = `${delay}s linear`;
+                    control.style.opacity = "0.5";
+                    control.style.transform = `translate(0, ${controlTop > 0 ? '150' : '-150'}px) scale(0.5)`;
+
+                    // Run handleRound function after the delay
+                    setTimeout(handleRound, delay * 1000 + 100, swipeAreaElement, swipeDistance, control);
+                }
+
+                // id the swipe distance is less than the maximum swipe distance, move the control element
+                control.style.top = `${swipeDistance}px`;
+            }
+        })
+    }
+
+
+    /**
+     * Handle the touch end event 
+     */
+    function handleTouchEnd(event) {
+        event.preventDefault();
+        [...event.changedTouches].forEach(touch => {
+            
+            // Check whether a touch is the first touch
+            if (touch.identifier === firstTouchId) {
+                let duration = 0.2;
+
+                // Get the control back to initial position
+                control.style.transition = `top ${duration}s`;
+                control.style.top = "0px";
+
+                // Set delay to execute the transition above.
+                setTimeout(() => {
+                    control.style.removeProperty("transition");
+                    control.style.removeProperty("top");
+                    control.style.removeProperty("position");
+                }, duration * 1000);
+            }
+        })
+    }
+
+
+    swipeAreaElement.addEventListener("touchstart", handleTouchStart)
+
+    swipeAreaElement.addEventListener("touchmove", handleTouchMove)
+
+    swipeAreaElement.addEventListener("touchend", handleTouchEnd)
+}
+
 // ---------------------------------------------------------------
 
 /**
