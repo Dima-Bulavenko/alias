@@ -153,6 +153,19 @@ function setTeamName() {
     }
 }
 
+
+/**
+ * Get a random word from the gameOptions word list
+ */
+function getRandomWord() {
+    const gameOptions = getGameOptions();
+    const words = gameOptions.words;
+    const word = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+    setGameOptions(gameOptions);
+    return word;
+}
+
+
 // ---------------------------------------------------------------
 
 /**
