@@ -166,6 +166,21 @@ function getRandomWord() {
 }
 
 
+/**
+ * Count a guessed and missed words
+ */
+function countWords(swipeDistance) {
+
+    let countElement;
+    if (swipeDistance > 0) {
+        countElement = document.getElementById("count-missed");
+    } else {
+        countElement = document.getElementById("count-guessed");
+    }
+
+    countElement.innerText = parseInt(countElement.innerText) + 1;
+}
+
 // ---------------------------------------------------------------
 
 /**
