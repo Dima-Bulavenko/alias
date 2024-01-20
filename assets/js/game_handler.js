@@ -181,6 +181,28 @@ function countWords(swipeDistance) {
     countElement.innerText = parseInt(countElement.innerText) + 1;
 }
 
+
+/**
+ * Delete the control element
+ */
+function deleteControl(control) {
+    control.remove();
+}
+
+
+/**
+ * Create a control element and return it
+ */
+function createControl() {
+    const word = getRandomWord();
+
+    const control = document.createElement("div");
+    control.id = "control";
+    control.className = "flex-container justify-center align-center word-control";
+    control.innerText = word;
+    return control;
+}
+
 // ---------------------------------------------------------------
 
 /**
