@@ -135,6 +135,26 @@ function setupBeforeRoundStage(){
 // ---------------------------------------------------------------
 
 
+// FUNCTIONS TO HANDLE THE "round" STAGE
+
+/**
+ * Set a name of the team which is on turn
+ */
+function setTeamName() {
+    const gameOptions = getGameOptions();
+    console.log(gameOptions.teams)
+    const roundSectionElement = document.getElementById("round");
+
+    for (team of gameOptions.teams) {
+        if (team.isTurn) {
+            roundSectionElement.querySelector(".team-name").innerText = team.name;
+            break
+        }
+    }
+}
+
+// ---------------------------------------------------------------
+
 /**
  * Create a word list based on the game type
  */
