@@ -309,3 +309,7 @@ a {
     width: 100%;
     height: 100%;
 }
+
+#control.word-control {
+    background-color: var(--main-color)
+}
