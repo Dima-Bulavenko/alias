@@ -168,17 +168,25 @@ function getRandomWord() {
 
 /**
  * Count a guessed and missed words
+ * And return a boolean value, true if the word is guessed, false if it's missed
  */
 function countWords(swipeDistance) {
-
     let countElement;
+    let isGuessed;
+
+    // If the swipe distance is greater than 0, the word is missed
     if (swipeDistance > 0) {
         countElement = document.getElementById("count-missed");
+        isGuessed = false;
     } else {
         countElement = document.getElementById("count-guessed");
+        isGuessed = true;
     }
 
+    // Increase the count of the guessed or missed words
     countElement.innerText = parseInt(countElement.innerText) + 1;
+
+    return isGuessed;
 }
 
 
