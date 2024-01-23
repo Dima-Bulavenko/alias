@@ -458,7 +458,7 @@ function startRound() {
 function createWordList() {
     const gameOptions = getGameOptions();
     let path;
-    
+
     // Set path to the JSON file based on the game type
     if (gameOptions.type === "easy") {
         path = "./easy_words.json";
@@ -467,7 +467,7 @@ function createWordList() {
     } else {
         path = "./hard_words.json";
     }
-    
+
     // Fetch the JSON file and save it to the gameOptions object
     fetch(path)
         .then(response => {
@@ -493,22 +493,30 @@ function createWordList() {
 window.addEventListener("load", function () {
     const gameOptions = getGameOptions();
 
+    // If the game options don't have a 'stages' property, create it
+    if (!("stages" in gameOptions)) {
+        
+        gameOptions.stages = [
+            { name: "before-round", isCurrent: true },
+            { name: "round", isCurrent: false },
+            { name: "after-round", isCurrent: false }
+        ]
+    }
+
+    setGameOptions(gameOptions);
+
+    // Hide all sections except active one
+    toggleSection();
+
+    // Prepare before round section
+    setupBeforeRoundStage();
+
+    // Event listener to start round
+    document.getElementById("control").addEventListener("click", startRound);
+    setTeamName();
+    
     // If the game options don't have a 'words' property, create a word list
     if (!("words" in gameOptions)) {
         createWordList();
     }
-
-    // If the game options don't have a 'stages' property, create it
-    if (!("stages" in gameOptions)) {
-        gameOptions.stages = [
-            {name: "before-round", isCurrent: true},
-            {name: "round", isCurrent: false},
-            {name: "after-round", isCurrent: false}
-        ]
-        setGameOptions(gameOptions);
-    }
-
-    document.getElementById('run-round').addEventListener('click', function (event) {
-        toggleSectionById("between-rounds")
-    });
 });
