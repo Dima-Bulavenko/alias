@@ -226,6 +226,11 @@ function formatTime(seconds) {
 }
 
 
+function checkIsRoundFinished() {
+    time = document.getElementById("round-timer").innerText;
+    return time === "00:00";
+}
+
 /**
  * Handle the swipe event of the swipe area
  */
