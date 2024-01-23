@@ -313,3 +313,30 @@ a {
 #control.word-control {
     background-color: var(--main-color)
 }
+
+#who-guessed {
+    /* display: none; */
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+#who-guessed div:first-child {
+    padding: 15px 15px 10px 15px;
+}
+
+#who-guessed .team {
+    font-weight: 600;
+    padding: 10px 15px;
+    
+}
+
+.team:not(:last-child) {
+    border-bottom: 2px solid black
+}
