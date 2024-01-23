@@ -167,26 +167,26 @@ function getRandomWord() {
 
 
 /**
- * Count a guessed and missed words
- * And return a boolean value, true if the word is guessed, false if it's missed
+ * Count a guessed and missed words and save them to the roundWords.
  */
-function countWords(swipeDistance) {
-    let countElement;
-    let isGuessed;
-
-    // If the swipe distance is greater than 0, the word is missed
-    if (swipeDistance > 0) {
-        countElement = document.getElementById("count-missed");
-        isGuessed = false;
-    } else {
-        countElement = document.getElementById("count-guessed");
-        isGuessed = true;
-    }
+function countWords(isGuessed) {
+    let elementID = isGuessed ? "count-guessed" : "count-missed";
+    let countElement = document.getElementById(`${elementID}`);
 
     // Increase the count of the guessed or missed words
     countElement.innerText = parseInt(countElement.innerText) + 1;
 
-    return isGuessed;
+    let word = document.getElementById("control").innerText;
+    let gameOptions = getGameOptions();
+
+    // Save the word to the roundWords
+    gameOptions.roundWords.push({ 
+        word: word, 
+        isGuessed: isGuessed,
+        team: gameOptions.teams.findIndex(team => team.isTurn)
+    });
+    setGameOptions(gameOptions);
+    
 }
 
 
