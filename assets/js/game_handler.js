@@ -231,6 +231,35 @@ function checkIsRoundFinished() {
     return time === "00:00";
 }
 
+
+/**
+ * Create a list of teams to choose who could guess the last word
+ */
+function handleLastWord() {
+    const gameOptions = getGameOptions();
+    const whoGuessedElement = document.getElementById("who-guessed")
+    
+    for ([index, team] of gameOptions.teams.entries()) {
+        let teamElement = document.createElement("div")
+        teamElement.className = "team";
+        teamElement.dataset.teamIndex = index;
+        teamElement.innerText = team.name;
+        whoGuessedElement.appendChild(teamElement);
+
+        // Add event listener to each team element
+        teamElement.addEventListener("click", function(event) {
+            const roundWords = gameOptions.roundWords;
+            roundWords[roundWords.length - 1].team = parseInt(this.dataset.teamIndex);
+            
+            whoGuessedElement.style.display = "none";
+            whoGuessedElement.querySelectorAll(".team").forEach(team => team.remove());
+            setGameOptions(gameOptions);
+        })
+    }
+
+    whoGuessedElement.style.display = "block";
+}
+
 /**
  * Handle the swipe event of the swipe area
  */
