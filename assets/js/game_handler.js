@@ -130,6 +130,7 @@ function setupBeforeRoundStage(){
     setWordCount();
     setTeamStats();
     setRoundInfo();
+    document.getElementById('run-round').addEventListener('click', toggleStage)
 }
 
 // ---------------------------------------------------------------
@@ -142,7 +143,6 @@ function setupBeforeRoundStage(){
  */
 function setTeamName() {
     const gameOptions = getGameOptions();
-    console.log(gameOptions.teams)
     const roundSectionElement = document.getElementById("round");
 
     for (team of gameOptions.teams) {
@@ -249,6 +249,8 @@ function handleLastWord() {
         // Add event listener to each team element
         teamElement.addEventListener("click", function(event) {
             const roundWords = gameOptions.roundWords;
+
+            // Take last item in roundWords and set team property to team hwo guessed the last word
             roundWords[roundWords.length - 1].team = parseInt(this.dataset.teamIndex);
             
             whoGuessedElement.style.display = "none";
@@ -382,6 +384,72 @@ function swipeHandler() {
     swipeAreaElement.addEventListener("touchend", handleTouchEnd)
 }
 
+
+/**
+ * Execute necessary functions to implement logic of round stage.
+ */
+function handleRound(isGuessed) {
+    const control = document.getElementById("control");
+    const swipeAreaElement = document.getElementById("swipe-area");
+    const gameOptions = getGameOptions();
+    
+    // Count guessed or missed word and add word object
+    // to roundWord property of gameOptions
+    countWords(isGuessed);
+
+    
+    deleteControl(control);
+
+    // Check if round was finished
+    if(checkIsRoundFinished()) {
+
+        // If the last word was guessed and commonFinalWord is true
+        if (gameOptions.settings.commonFinalWord && isGuessed) {
+            handleLastWord();
+            document.querySelectorAll("#who-guessed .team").forEach(team => {
+                team.addEventListener("click", function(event) {
+                    toggleStage();
+                })
+            });
+        } else {
+            // Just switch to next stage
+            toggleStage();
+        }
+    } else {
+        // If the round is not finished create new swipeHandler and new control
+        swipeAreaElement.appendChild(createControl());
+        swipeHandler();
+    }
+}
+
+function startRound() {
+    const gameOptions = getGameOptions();
+
+    // Get round duration and timer element 
+    let roundTime = gameOptions.settings.roundDuration;
+    const timerElement = document.getElementById("round-timer");
+    
+    // Set roundWords if we don't have it
+    if (!('roundWords' in gameOptions)) {
+        gameOptions.roundWords = [];
+        setGameOptions(gameOptions);
+    }
+
+    // Set random word to control and change it style by adding new class
+    const controlElement = document.getElementById("control");
+    controlElement.innerText = getRandomWord();
+    controlElement.classList.add("word-control");
+
+
+    swipeHandler();
+    const roundInterval = setInterval(() => {
+        --roundTime;
+        if (roundTime === 0) {
+            clearInterval(roundInterval)
+        }
+        timerElement.innerText = formatTime(roundTime);
+    }, 1000);
+}
 // ---------------------------------------------------------------
 
 /**
