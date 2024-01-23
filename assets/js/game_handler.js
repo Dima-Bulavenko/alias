@@ -267,6 +267,14 @@ function swipeHandler() {
 
                 // If the swipe distance is greater than the maximum swipe distance, run a set of functions
                 if (Math.abs(swipeDistance) > maxSwipeDistance) {
+                    let isGuessed;
+
+                    // Check whether the word is guessed or missed
+                    if (swipeDistance > 0) {
+                        isGuessed = false;
+                    } else {
+                        isGuessed = true;
+                    }
 
                     // Set delay to delay the running of handleRound function
                     const delay = 0.2;
@@ -279,11 +287,11 @@ function swipeHandler() {
 
                     // Set transition to animate the swipe of control element before running handleRound function
                     control.style.transition = `${delay}s linear`;
-                    control.style.opacity = "0.5";
+                    control.style.opacity = "0";
                     control.style.transform = `translate(0, ${controlTop > 0 ? '150' : '-150'}px) scale(0.5)`;
 
                     // Run handleRound function after the delay
-                    setTimeout(handleRound, delay * 1000 + 100, swipeAreaElement, swipeDistance, control);
+                    setTimeout(handleRound, delay * 1000 + 100, isGuessed);
                 }
 
                 // id the swipe distance is less than the maximum swipe distance, move the control element
