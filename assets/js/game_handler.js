@@ -183,7 +183,8 @@ function countWords(isGuessed) {
     gameOptions.roundWords.push({ 
         word: word, 
         isGuessed: isGuessed,
-        team: gameOptions.teams.findIndex(team => team.isTurn)
+        team: gameOptions.teams.findIndex(team => team.isTurn),
+        isCommon: checkIsRoundFinished()
     });
     setGameOptions(gameOptions);
     
