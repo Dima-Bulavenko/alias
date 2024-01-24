@@ -453,6 +453,45 @@ function startRound() {
 }
 // ---------------------------------------------------------------
 
+// FUNCTIONS TO HANDLE THE "after-round" STAGE
+
+/**
+ * Calculate score of one round.
+* @returns {Object} Object with team index as a key and team score as a value
+ */
+function countRoundPoints() {
+    const gameOptions = getGameOptions();
+    const roundWords = gameOptions.roundWords;
+    const roundPoints = {}
+
+    // "gameOptions.settings.penaltyMiss" can be true or false
+    // so it can be converted to 1 or 0
+    const penaltyMiss = gameOptions.settings.penaltyMiss;
+
+    for (wordObj of roundWords) {
+        teamIndex = wordObj.team;
+
+        // If the team is not in roundPoints object, add it
+        if (!(teamIndex in roundPoints)) {
+            roundPoints[teamIndex] = 0;
+        }
+
+        // If the word is guessed, add 1 point to the team score
+        if (wordObj.isGuessed) {
+            roundPoints[teamIndex] += 1;
+            
+        // If the word is not guessed and it's not common, subtract penaltyMiss points from the team score
+        } else if (!(wordObj.isGuessed) && !(wordObj.isCommon)) {
+            roundPoints[teamIndex] -= penaltyMiss;
+        }        
+    }
+    
+    return roundPoints;
+    
+}
+
+// ---------------------------------------------------------------
+
 /**
  * Create a word list based on the game type
  */
