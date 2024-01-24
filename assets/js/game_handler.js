@@ -497,6 +497,9 @@ function setAfterRoundInfo() {
     const roundPoints = countRoundPoints();
     const infoElement = document.getElementById("after-round-info");
     const gameOptions = getGameOptions();
+
+    // Delete all children of infoElement
+    infoElement.innerHTML = "";
     
     for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
         let teamName = gameOptions.teams[teamIndex].name;
