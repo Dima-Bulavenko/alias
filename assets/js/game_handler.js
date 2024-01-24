@@ -479,7 +479,7 @@ function countRoundPoints() {
         // If the word is guessed, add 1 point to the team score
         if (wordObj.isGuessed) {
             roundPoints[teamIndex] += 1;
-            
+
         // If the word is not guessed and it's not common, subtract penaltyMiss points from the team score
         } else if (!(wordObj.isGuessed) && !(wordObj.isCommon)) {
             roundPoints[teamIndex] -= penaltyMiss;
@@ -488,6 +488,26 @@ function countRoundPoints() {
     
     return roundPoints;
     
+}
+
+/**
+ * Set data to "#after-round-info" element
+ */
+function setAfterRoundInfo() {
+    const roundPoints = countRoundPoints();
+    const infoElement = document.getElementById("after-round-info");
+    const gameOptions = getGameOptions();
+    
+    for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
+        let teamName = gameOptions.teams[teamIndex].name;
+        let teamInfo = document.createElement("div");
+        
+        teamPoints = teamPoints >= 0 ? `+${teamPoints}` : `${teamPoints}`;
+        teamInfo.className = "team-info flex-container justify-space-between";
+        teamInfo.innerHTML = `<div class="name">${teamName}</div>
+                            <div class="points">${teamPoints}</div>`;
+        infoElement.appendChild(teamInfo);
+    }
 }
 
 // ---------------------------------------------------------------
