@@ -580,6 +580,13 @@ function setAfterRoundWordList(){
     }
 }
 
+/**
+ * Runs all function to set up the "after-round" stage
+ */
+function setAfterRoundSection() {
+    setAfterRoundInfo();
+    setAfterRoundWordList();
+}
 // ---------------------------------------------------------------
 
 /**
