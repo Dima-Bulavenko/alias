@@ -587,6 +587,22 @@ function setAfterRoundSection() {
     setAfterRoundInfo();
     setAfterRoundWordList();
 }
+
+
+/**
+ * Add round points to a team score property
+ */
+function calculateTeamsScore() {
+    const gameOptions = getGameOptions();
+    const roundPoints = countRoundPoints();
+
+    for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
+        gameOptions.teams[teamIndex].score += teamPoints;
+    }
+
+    setGameOptions(gameOptions);
+}
+
 // ---------------------------------------------------------------
 
 /**
