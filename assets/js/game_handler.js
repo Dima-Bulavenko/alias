@@ -751,6 +751,8 @@ function createWordList() {
 window.addEventListener("DOMContentLoaded", function () {
     const gameOptions = getGameOptions();
 
+    document.getElementById("round-timer").innerText = formatTime(gameOptions.settings.roundDuration);
+
     // If the game options don't have a 'stages' property, create it
     if (!("stages" in gameOptions)) {
         
