@@ -409,11 +409,13 @@ function handleRound(isGuessed) {
             handleLastWord();
             document.querySelectorAll("#who-guessed .team").forEach(team => {
                 team.addEventListener("click", function(event) {
+                    setAfterRoundSection();
                     toggleStage();
                 })
             });
         } else {
             // Just switch to next stage
+            setAfterRoundSection();
             toggleStage();
         }
     } else {
