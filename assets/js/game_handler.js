@@ -517,6 +517,16 @@ function setAfterRoundInfo() {
     }
 }
 
+/**
+ * Toggle word type (guessed or missed)
+ */
+function changeWordType(index) {
+    const gameOptions = getGameOptions();
+    gameOptions.roundWords[index].isGuessed = !gameOptions.roundWords[index].isGuessed;
+    setGameOptions(gameOptions);
+}
+
+
 // ---------------------------------------------------------------
 
 /**
