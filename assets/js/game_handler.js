@@ -586,6 +586,7 @@ function setAfterRoundWordList(){
 function setAfterRoundSection() {
     setAfterRoundInfo();
     setAfterRoundWordList();
+    document.getElementById("continue").addEventListener("click", finishRound);
 }
 
 
