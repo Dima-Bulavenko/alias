@@ -678,6 +678,32 @@ function setNewTeamTurnAndRound() {
     setGameOptions(gameOptions);
 }
 
+/**
+ * Runs necessary functions to finish the round 
+ */
+function finishRound() {
+    // Calculate teams score
+    calculateTeamsScore();
+
+    // get winner if there is one
+    const winner = getWinner();
+    
+    // Reset roundWords property
+    const gameOptions = getGameOptions();
+    gameOptions.roundWords = [];
+    setGameOptions(gameOptions)
+
+    if (winner) {
+        // logic if game is finished
+        console.log(winner)
+        window.location.href = "./win.html";
+        return 
+    }
+
+    setNewTeamTurnAndRound();
+    toggleStage() 
+}
+
 // ---------------------------------------------------------------
 
 /**
