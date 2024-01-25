@@ -639,6 +639,45 @@ function getWinner() {
     return winner.length === 1 ? winner[0] : false;
 }
 
+/**
+ * Set a new team for next round and increase team's round property
+ */
+function setNewTeamTurnAndRound() {
+    const gameOptions = getGameOptions();
+    let newTeam;
+    
+    for (let [index, team] of gameOptions.teams.entries()) {
+        // check if the team is on turn
+        if (team.isTurn) {
+
+            // Set the current team's isTurn property to false
+            team.isTurn = false;
+
+            // if the current team is the last team
+            if (index === gameOptions.teams.length - 1) {
+
+                // Set the first team as the new current team
+                newTeam = gameOptions.teams[0]; 
+            } else {
+
+                // Otherwise, set the next team as the new current team
+                newTeam = gameOptions.teams[index+1];
+            }
+
+            // Set the new current stage's isCurrent property to true
+            newTeam.isTurn = true;
+
+            // Increase the round of the new current team
+            newTeam.round += 1;
+
+            // Break the loop as we've found and updated the current stage
+            break;
+        }
+    }
+    // Update the game options with the new stages
+    setGameOptions(gameOptions);
+}
+
 // ---------------------------------------------------------------
 
 /**
