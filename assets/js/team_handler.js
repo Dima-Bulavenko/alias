@@ -189,7 +189,7 @@ document.getElementById("next").addEventListener("click", function (event) {
         // Add team objects to gameOptions and create its properties
         gameOptions.teams.push({
             name: element.textContent,
-            round: 1,
+            round: index === 0 ? 1 : 0,
             isTurn: index === 0 ? true : false,
             score: 0
         })
