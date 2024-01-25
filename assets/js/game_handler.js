@@ -502,6 +502,10 @@ function setAfterRoundInfo() {
     infoElement.innerHTML = "";
     
     for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
+        
+        // if team has 0 points and it didn't play this round, don't show it
+        if (teamPoints === 0 && !(gameOptions.teams[teamIndex].isTurn)) continue;
+
         let teamName = gameOptions.teams[teamIndex].name;
         let teamInfo = document.createElement("div");
         
