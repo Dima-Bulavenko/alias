@@ -748,7 +748,7 @@ function createWordList() {
 }
 
 
-window.addEventListener("load", function () {
+window.addEventListener("DOMContentLoaded", function () {
     const gameOptions = getGameOptions();
 
     // If the game options don't have a 'stages' property, create it
