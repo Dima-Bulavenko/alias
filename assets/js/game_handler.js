@@ -701,7 +701,8 @@ function finishRound() {
     }
 
     setNewTeamTurnAndRound();
-    toggleStage() 
+    toggleStage()
+    window.location.reload();
 }
 
 // ---------------------------------------------------------------
