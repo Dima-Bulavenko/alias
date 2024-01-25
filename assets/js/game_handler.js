@@ -603,6 +603,42 @@ function calculateTeamsScore() {
     setGameOptions(gameOptions);
 }
 
+/**
+ * Implement logic of getting winner
+ * Returns false if there is no winner or winner object if there is the winner
+ */
+function getWinner() {
+    const gameOptions = getGameOptions();
+
+    // Get word number which is needed to win and convert it to number
+    const wordsAmountToWin = parseInt(gameOptions.settings.wordCount);
+    const teams = gameOptions.teams;
+    let winner = [];
+
+    // Check if all teams have the same round
+    const isRoundsEqual = teams.every(team => team.round === teams[0].round);
+    // Check if any team has score equal or greater than wordsAmountToWin
+    const isAnyTeamScoreEqualOrAboveWordsAmountToWin = teams.some(team => team.score >= wordsAmountToWin)
+
+    if (isRoundsEqual && isAnyTeamScoreEqualOrAboveWordsAmountToWin) {
+        let maxScore = wordsAmountToWin;
+        for (let team of teams) {
+            if (team.score === maxScore) {
+                // If there are more than one team with max score, add them to the winner array
+                winner.push(team)
+            } else if (team.score > maxScore) {
+                // if the  current team score is greater than maxScore, set the team score as maxScore 
+                // and reset the winner array and add the current team to the winner array
+                winner = [team];
+                maxScore = team.score;
+            }
+        }
+    }
+
+    // If there is only one winner, return it, otherwise return false
+    return winner.length === 1 ? winner[0] : false;
+}
+
 // ---------------------------------------------------------------
 
 /**
