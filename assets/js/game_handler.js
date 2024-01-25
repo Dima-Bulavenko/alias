@@ -527,6 +527,59 @@ function changeWordType(index) {
 }
 
 
+/**
+ * Set data to "#words-list" element
+ */
+function setAfterRoundWordList(){
+    const gameOptions = getGameOptions();
+    const wordListElement = document.getElementById("words-list");
+    wordListElement.innerHTML = "";
+
+    const roundWords = gameOptions.roundWords;
+    const teams = gameOptions.teams;
+    let commonWordText = "";
+
+    for (let [wordIndex, wordObj] of roundWords.entries()) {
+        let word = wordObj.word;
+        let wordItem = document.createElement("div");
+        wordItem.className = "words-item";
+
+        if (wordObj.isCommon) {
+            commonWordText = `(${wordObj.isGuessed ? teams[wordObj.team].name : "common"})`;
+        }
+
+        wordItem.innerHTML = `<div class="word">${word} ${commonWordText}</div>
+                            <i class="fa-solid fa-thumbs-up ${wordObj.isGuessed ? "active" : ""}"></i>`;
+
+        wordListElement.appendChild(wordItem);
+        
+        const thumbIcon = wordItem.querySelector(".fa-thumbs-up");
+        thumbIcon.addEventListener("click", function(event) {
+
+            this.classList.toggle("active");
+
+            if (wordObj.isCommon && !(wordObj.isGuessed) ) {
+                handleLastWord();
+                document.querySelectorAll("#who-guessed .team").forEach(team => {
+                    team.addEventListener("click", function(event) {
+                        changeWordType(wordIndex);
+                        countRoundPoints();
+                        setAfterRoundInfo();
+                        setAfterRoundWordList()
+                    })
+                });
+            } else {
+                changeWordType(wordIndex);
+                countRoundPoints();
+                setAfterRoundInfo();
+                setAfterRoundWordList()
+            }
+        })
+        
+                            
+    }
+}
+
 // ---------------------------------------------------------------
 
 /**
