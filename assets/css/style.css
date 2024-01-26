@@ -21,6 +21,7 @@ body {
     color: var(--text-color);
     background-color: var(--body-background);
     overflow-x: hidden;
+    height: 100dvh;
 }
 
 .disabled {
@@ -82,7 +83,7 @@ a {
 
 /* Content style */
 #content {
-    height: 100vh;
+    height: 100dvh;
 }
 
 /* STYLE FOR index.html */
@@ -273,7 +274,7 @@ a {
 /* STYLE FRO game.html */
 /* before-round section */
 .game-state {
-    height: 100vh;
+    height: 100dvh;
 }
 
 #stat-container {
