@@ -23,6 +23,29 @@ body {
     overflow-x: hidden;
     height: 100dvh;
 }
+.wave {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 20px;
+}
+
+.wave .shape-fill {
+    fill: var(--body-background);
+}
+
+.relative {
+    position: relative;
+}
 
 .disabled {
     pointer-events: none;
