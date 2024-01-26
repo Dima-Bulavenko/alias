@@ -101,6 +101,11 @@ project description
 [Back to top](<#contents>)
 
 ## Bugs Fixed
+
+* Delayed content loading when accessing a page ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/5cd0fee3ca4d561ad4eec93b0cab96debecbcdca))
+
+* The lack of setup for the content of "#round-timer" leads to issues in the proper functioning of checkIsRoundFinished(). ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/a4a57020a4cfcd738539f3451d86aa802e942258))
+
 [Back to top](<#contents>)
 
 ## Bugs Unfixed
