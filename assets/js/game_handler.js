@@ -546,7 +546,7 @@ function setAfterRoundWordList(){
         let wordItem = document.createElement("div");
         wordItem.className = "words-item";
 
-        if (wordObj.isCommon) {
+        if (wordObj.isCommon && gameOptions.settings.commonFinalWord) {
             commonWordText = `(${wordObj.isGuessed ? teams[wordObj.team].name : "common"})`;
         }
 
@@ -557,10 +557,10 @@ function setAfterRoundWordList(){
         
         const thumbIcon = wordItem.querySelector(".fa-thumbs-up");
         thumbIcon.addEventListener("click", function(event) {
-
+            const gameOptions = getGameOptions();
             this.classList.toggle("active");
 
-            if (wordObj.isCommon && !(wordObj.isGuessed) ) {
+            if (wordObj.isCommon && !(wordObj.isGuessed) && gameOptions.settings.commonFinalWord ) {
                 handleLastWord();
                 document.querySelectorAll("#who-guessed .team").forEach(team => {
                     team.addEventListener("click", function(event) {
