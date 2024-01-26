@@ -341,3 +341,10 @@ a {
 #who-guessed .team:not(:last-child) {
     border-bottom: 2px solid black
 }
+
+
+/* style after-round section */
+
+.active {
+    color: var(--main-color);
+}
