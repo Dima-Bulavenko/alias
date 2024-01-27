@@ -146,17 +146,24 @@ a {
 
 /* STYLE FOR teams.html */
 .team-container {
-    padding: 10px 20px 10px 20px;
+    padding: 20px;
+}
+
+.team-container:not(:last-child) {
+    border-bottom: 2px solid var(--text);
 }
 
 #add-team {
-    height: 30px;
+    height: 60px;
+    font-size: 25px;
     background-color: var(--main-color);
+    box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
 }
 
 #next {
-    height: 40px;
+    height: 70px;
     background-color: var(--block-background);
+    box-shadow: 0px -3px 5px rgb(0, 0, 0, 0.5);
 }
 
 
