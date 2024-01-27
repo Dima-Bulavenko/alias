@@ -8,17 +8,17 @@
 :root {
     --main-font-family: 'Inter Tight', sans-serif;
     --element-off: rgb(140, 140, 140);
-    --main-color: rgb(10, 163, 186);
-    --main-color-transparent: rgba(10, 163, 186, 0.5);
-    --body-background: #0079ff;
-    --block-background: red;
+    --main-color: rgb(202, 204, 144);
+    --main-color-transparent: rgba(202, 204, 144 0.5);
+    --body-background: rgb(244, 235, 190);
+    --block-background: #d6d3f0;
     --run-button-color: rgba(188, 220, 30, 0.804);
-    --text-color: #313131;
+    --text: rgb(9, 9, 9);
 }
 
 body {
     font-family: var(--main-font-family);
-    color: var(--text-color);
+    color: var(--text);
     background-color: var(--body-background);
     overflow-x: hidden;
     height: 100dvh;
@@ -161,7 +161,7 @@ a {
 
 /* STYLE FOR setting.html */
 .setting-container {
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text);
     padding: 10px 10px 5px 10px;
 }
 
@@ -185,7 +185,7 @@ a {
     border-radius: 1.5px;
     max-width: 300px;
     outline: none;
-    background: var(--text-color); 
+    background: var(--text); 
 }
 
 .range-input::-webkit-slider-thumb {
@@ -274,11 +274,11 @@ a {
 .category-container {
     width: 100%;
     padding: 20px 20px 20px 35%;
-    border-top: 2px solid var(--text-color);
+    border-top: 2px solid var(--text);
 }
 
 .category-container:last-child {
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text);
 }
 
 .category-name {
@@ -290,7 +290,7 @@ a {
     margin-top: 3px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--text);
 }
 
 
