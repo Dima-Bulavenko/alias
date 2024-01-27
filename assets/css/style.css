@@ -105,6 +105,10 @@ a {
     justify-content: space-evenly;
 }
 
+.justify-start {
+    justify-content: start;
+}
+
 
 /* Content style */
 #content {
@@ -281,29 +285,35 @@ a {
 
 
 /* STYLE FOR categories.html */
+.category-image {
+    width: 70px;
+    height: 70px;
+}
 .categories {
     height: 100%;
 }
 .category-container {
+    
     width: 100%;
-    padding: 20px 20px 20px 35%;
+    padding: 15px;
     border-top: 2px solid var(--text);
+    box-shadow: inset 0px -2px 10px rgb(0, 0, 0, 0.3);
+}
+
+.category-container > img {
+    margin-left: 10%;
+    margin-right: 5%;
 }
 
 .category-container:last-child {
     border-bottom: 2px solid var(--text);
 }
 
-.category-name {
-    font-weight: 800;   
-    color: var(--main-color);
-}
-
 .category-description{
     margin-top: 3px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--element-off);
 }
 
 
