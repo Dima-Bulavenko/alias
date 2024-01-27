@@ -11,7 +11,7 @@ function setValueAndProgress(input) {
         const progress = (input.value - input.min) / (input.max - input.min) * 100;
 
         // Set input progress
-        input.style.background = `linear-gradient(to right, var(--main-color) ${progress}%, var(--text-color) ${progress}%)`
+        input.style.background = `linear-gradient(to right, var(--main-color) ${progress}%, var(--text) ${progress}%)`
     }
 }
 
