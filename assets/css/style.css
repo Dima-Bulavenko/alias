@@ -72,6 +72,31 @@ a {
     border: none
 }
 
+/* Bubble pattern */
+
+.bubble {
+    position: relative;
+    --bubble-height: 2rem;
+}
+
+.bubble::after {
+    content: "";
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    width: 100%;
+    bottom: calc(-1 * var(--bubble-height));
+    left: 0;
+    background-color: inherit;
+    height: var(--bubble-height);
+    transform: rotate(180deg);
+}
+
+.bubble.flip::after {
+    top: calc(-1 * var(--bubble-height));
+    transform: none;  
+}
+
 /* Flex classes */
 .flex-container {
     display: flex;
