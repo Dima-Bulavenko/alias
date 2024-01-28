@@ -379,26 +379,45 @@ a {
 
 /* round section */
 #guessed-words, #missed-words {
-    width: 100vw;
-    padding: 10px 0;
+    width: 100%;
+    gap: 10px;
+}
+
+.team-name {
+    color: var(--secondary-text)
+}
+
+#count-guessed, #count-missed {
+    font-size: 30px
 }
 
 #guessed-words {
     background-color: var(--main-color);
+    padding: 20px 0 0 0;
 }
 
 #missed-words {
     background-color: var(--element-off);
+    padding: 0 0 20px 0;
+    color: var(--body-background)
+}
+
+#round-timer {
+    background-color: var(--body-background);
+    padding: 3px 5px 3px 5px;
+    border-radius: 20px;
+    color: var(--text);
 }
 
 #control {
     width: 200px;
     height: 200px;
-    background-color: red;
+    background-color: var(--block-background);
     border-radius: 50%;
     font-size: 30px;
     font-weight: 800;
     position: relative;
+    box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
 }
 
 #swipe-area {
