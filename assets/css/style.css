@@ -97,6 +97,7 @@ a {
     height: 70px;
     background-color: var(--block-background);
     box-shadow: 0px -3px 5px rgb(0, 0, 0, 0.5);
+    font-family: var(--main-font-family);
 }
 
 /* Bubble pattern */
@@ -170,6 +171,10 @@ a {
 
 /* STYLE FOR index.html */
 /* logo style */
+#rules-section {
+    display: none;
+}
+
 #logo-container {
     width: 150px;
     height: 150px;
@@ -639,5 +644,79 @@ a {
     .rule-item {
         margin: 0;
         flex-basis: 13dvh;
+    }
+}
+
+/* Media query: laptops and larger (992 and up) */
+@media screen and (min-width: 992px) {
+    header {
+        background-color: var(--block-background);
+    }
+    
+    .hoverable {
+        transition: 0.5s;
+    }
+
+    .hoverable:hover {
+        filter: brightness(80%);
+    }
+
+    #content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* STYLE FRO index.html */
+    #rules-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 40%;
+    }
+
+    #game-name {
+        font-size: 50px;
+        font-weight: 800;
+        padding-bottom: 4px;
+        text-align: center;
+        background-color: var(--main-color);
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    #rules-section #rules-container {
+        font-size: 20px;
+        margin: 0;
+        width: 90%;
+        height: 80%;
+        max-width: 500px;
+        max-height: 700px;
+    }
+    
+    #logo-container, #options > *:not(#start-game) {
+        display: none
+    }
+    
+    #options {
+        padding: 0;
+        width: auto;    
+        height: auto; 
+        background: none;
+        padding: 0 20dvw 0 0;   
+    }
+
+    #start-game {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        font-size: 30px;
+        text-align: center;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
+        background-color: var(--block-background);
+    }
+
+    #start-game:hover {
+        transform: scale(1.1);
     }
 }
