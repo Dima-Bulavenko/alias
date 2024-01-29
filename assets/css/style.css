@@ -794,5 +794,22 @@ a {
     .checkbox-input:hover {
         filter: brightness(80%);
     }
-    
+
+    /* STYLE FRO categories.html */
+    .category-container{
+        margin-bottom: 30px;
+        background-color: var(--block-background);
+        border-radius: 15px;
+        border: none !important;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
+    }
+
+    .category-description {
+        color: var(--secondary-text);
+    }
+
+    .centered {
+        margin: 0 auto;
+    }
+
 }
