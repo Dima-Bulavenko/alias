@@ -114,7 +114,7 @@ function setRoundInfo() {
     const roundCountElement = document.getElementById("round-count");
     const preparedTeamElement = document.getElementById("prepared-team");
 
-    for (team of gameOptions.teams) {
+    for (let team of gameOptions.teams) {
         if (team.isTurn) {
             preparedTeamElement.innerText = team.name;
             roundCountElement.innerText = `Round ${team.round}`;
@@ -145,7 +145,7 @@ function setTeamName() {
     const gameOptions = getGameOptions();
     const roundSectionElement = document.getElementById("round");
 
-    for (team of gameOptions.teams) {
+    for (let team of gameOptions.teams) {
         if (team.isTurn) {
             roundSectionElement.querySelector(".team-name").innerText = team.name;
             break
@@ -228,7 +228,7 @@ function formatTime(seconds) {
 
 
 function checkIsRoundFinished() {
-    time = document.getElementById("round-timer").innerText;
+    let time = document.getElementById("round-timer").innerText;
     return time === "00:00";
 }
 
@@ -240,7 +240,7 @@ function handleLastWord() {
     const gameOptions = getGameOptions();
     const whoGuessedElement = document.getElementById("who-guessed")
     
-    for ([index, team] of gameOptions.teams.entries()) {
+    for (let [index, team] of gameOptions.teams.entries()) {
         let teamElement = document.createElement("div")
         teamElement.className = "team";
         teamElement.dataset.teamIndex = index;
@@ -481,8 +481,8 @@ function countRoundPoints() {
     // so it can be converted to 1 or 0
     const penaltyMiss = gameOptions.settings.penaltyMiss;
 
-    for (wordObj of roundWords) {
-        teamIndex = wordObj.team;
+    for (let wordObj of roundWords) {
+        let teamIndex = wordObj.team;
 
         // If the team is not in roundPoints object, add it
         if (!(teamIndex in roundPoints)) {
@@ -514,7 +514,7 @@ function setAfterRoundInfo() {
     // Delete all children of infoElement
     infoElement.innerHTML = "";
     
-    for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
+    for (let [teamIndex, teamPoints] of Object.entries(roundPoints)) {
         
         // if team has 0 points and it didn't play this round, don't show it
         if (teamPoints === 0 && !(gameOptions.teams[teamIndex].isTurn)) continue;
@@ -610,7 +610,7 @@ function calculateTeamsScore() {
     const gameOptions = getGameOptions();
     const roundPoints = countRoundPoints();
 
-    for ([teamIndex, teamPoints] of Object.entries(roundPoints)) {
+    for (let [teamIndex, teamPoints] of Object.entries(roundPoints)) {
         gameOptions.teams[teamIndex].score += teamPoints;
     }
 

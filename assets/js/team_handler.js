@@ -40,7 +40,7 @@ function removeTeam() {
     const teamName = teamElement.querySelector(".team").textContent;
 
     // Update the 'taken' status of the corresponding team to false
-    for (const team of teams) {
+    for (let team of teams) {
         if (team.name === teamName) {
             team.taken = false;
 
@@ -184,7 +184,7 @@ document.getElementById("next").addEventListener("click", function (event) {
     };
 
     // Iterate through all teams' elements
-    for ([index, element] of [...document.querySelectorAll("#teams .team")].entries()) {
+    for (let [index, element] of [...document.querySelectorAll("#teams .team")].entries()) {
 
         // Add team objects to gameOptions and create its properties
         gameOptions.teams.push({
