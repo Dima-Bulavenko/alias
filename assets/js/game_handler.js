@@ -1,18 +1,4 @@
-/**
- * Get game options from local storage
- */
-function getGameOptions() {
-    const gameOptions = JSON.parse(localStorage.getItem("gameOptions"));
-    return gameOptions;
-}
-
-/**
- * Set game options to local storage
- */
-function setGameOptions(obj) {
-    localStorage.setItem("gameOptions", JSON.stringify(obj));
-
-}
+import { getGameOptions, setGameOptions } from "./script.js";
 
 /**
  * Show sections when its state is "current" and hide when it's not
@@ -72,8 +58,7 @@ function toggleStage() {
     // Update the game options with the new stages
     setGameOptions(gameOptions);
 
-    // Toggle the game section
-    toggleSection();
+    loadPageHandler();
     
 }
 
@@ -746,32 +731,15 @@ function loadPageHandler() {
 window.addEventListener("DOMContentLoaded", function () {
     const gameOptions = getGameOptions();
 
-    document.getElementById("round-timer").innerText = formatTime(gameOptions.settings.roundDuration);
-
     // If the game options don't have a 'stages' property, create it
     if (!("stages" in gameOptions)) {
-        
         gameOptions.stages = [
             { name: "before-round", isCurrent: true },
             { name: "round", isCurrent: false },
             { name: "after-round", isCurrent: false }
         ]
+        setGameOptions(gameOptions);
     }
-
-    setGameOptions(gameOptions);
-
-    // Hide all sections except active one
-    toggleSection();
-
-    // Prepare before round section
-    setupBeforeRoundStage();
-
-    // Event listener to start round
-    document.getElementById("control").addEventListener("click", startRound);
-    setTeamName();
     
-    // If the game options don't have a 'words' property, create a word list
-    if (!("words" in gameOptions)) {
-        createWordList();
-    }
+    loadPageHandler();
 });
