@@ -453,6 +453,17 @@ function startRound() {
         timerElement.innerText = formatTime(roundTime);
     }, 1000);
 }
+
+/**
+ * Runs all functions to set up the "round" stage
+ */
+function setupRoundStage() {
+    const roundDuration = getGameOptions().settings.roundDuration;
+    setTeamName();
+    document.getElementById("round-timer").innerText = formatTime(roundDuration);
+    document.getElementById("control").addEventListener("click", startRound);
+
+}
 // ---------------------------------------------------------------
 
 // FUNCTIONS TO HANDLE THE "after-round" STAGE
