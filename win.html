@@ -23,7 +23,29 @@
 </head>
 
 <body>
-    Win
+    <div id="content" class=" flex-container flex-column justify-space-between">
+        <div class="winner-container flex-container justify-center">
+            <div id="winner" class="flex-container flex-column justify-center align-center">
+                <div id="winner-score-container">
+                    <div id="winner-score"></div>
+                    <div>points</div>
+                </div>
+                <div id="winner-name">
+                </div>
+                <div>WINNER</div>
+            </div>
+        </div>
+
+        <div class="winner-teams-info">
+            <div class="winner-team-info flex-container justify-space-between">
+                <div class="name"></div>
+                <div class="points"></div>
+            </div>
+        </div>
+        <div id="menu" class="flex-container justify-center align-center run-button run-button">Menu</div>
+    </div>
+    <script src="./assets/js/script.js" type="module"></script>
+    <script src="./assets/js/win_handler.js" type="module"></script>
 </body>
 
 </html>
