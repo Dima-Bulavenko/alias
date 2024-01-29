@@ -26,7 +26,7 @@
 <body>
 <header class="flex-container justify-space-between align-center">
         <div id="navigation" class="flex-container">
-            <div class="nav-item nav-active">
+            <div class="nav-item">
                 <a href="./index.html" class="navigation-item">
                     <img src="./assets/images/a-100.png" alt="Home">
                 </a>
@@ -53,76 +53,78 @@
         </div>
     </header>
 <div id="content" class=" flex-container flex-column justify-space-between">
-        <div class="settings">
-            <div class="setting-container flex-container flex-column justify-space-between">
-                <div class="setting-info flex-container justify-space-between align-start">
-                    <div class="setting-name">
-                        Word count
-                        <div class="setting-description">
-                            needed for victory
+        <div class="left-settings">
+            <div class="settings">
+                <div class="setting-container flex-container flex-column justify-space-between">
+                    <div class="setting-info flex-container justify-space-between align-start">
+                        <div class="setting-name">
+                            Word count
+                            <div class="setting-description">
+                                needed for victory
+                            </div>
                         </div>
+                        <div class="setting-value"></div>
                     </div>
-                    <div class="setting-value"></div>
+                    <input type="range" id="word-count" name="wordCount" aria-label="word count" class="range-input" min="10" max="150" step="5" value="30">
                 </div>
-                <input type="range" id="word-count" name="wordCount" aria-label="word count" class="range-input" min="10" max="150" step="5" value="30">
-            </div>
-            <div class="setting-container flex-container flex-column justify-space-between">
-                <div class="setting-info flex-container justify-space-between align-start">
-                    <div class="setting-name">
-                        Round duration
-                        <div class="setting-description">
-                            time in seconds
+                <div class="setting-container flex-container flex-column justify-space-between">
+                    <div class="setting-info flex-container justify-space-between align-start">
+                        <div class="setting-name">
+                            Round duration
+                            <div class="setting-description">
+                                time in seconds
+                            </div>
                         </div>
+                        <div class="setting-value"></div>
                     </div>
-                    <div class="setting-value"></div>
+                    <input type="range" id="round-duration" aria-label="round duration" name="roundDuration" class="range-input" min="10" max="120" step="5" value="60">
                 </div>
-                <input type="range" id="round-duration" aria-label="round duration" name="roundDuration" class="range-input" min="10" max="120" step="5" value="60">
-            </div>
-            <div class="setting-container flex-container justify-space-between">
-                <div class="setting-info flex-container justify-space-between align-start">
-                    <div class="setting-name">
-                        Penalty for a miss
-                        <div class="setting-description">
-                            each missed word deducts one point
+                <div class="setting-container flex-container justify-space-between">
+                    <div class="setting-info flex-container justify-space-between align-start">
+                        <div class="setting-name">
+                            Penalty for a miss
+                            <div class="setting-description">
+                                each missed word deducts one point
+                            </div>
                         </div>
+                        <div class="setting-value"></div>
                     </div>
-                    <div class="setting-value"></div>
+                    <label for="penalty-miss" class="checkbox-label">
+                        <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss" aria-label="missed word deducts one point" checked>
+                    </label>
                 </div>
-                <label for="penalty-miss" class="checkbox-label">
-                    <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss" aria-label="missed word deducts one point" checked>
-                </label>
-            </div>
-            <div class="setting-container flex-container justify-space-between">
-                <div class="setting-info flex-container justify-space-between align-start">
-                    <div class="setting-name">
-                        Common final word
-                        <div class="setting-description">
-                            all teams can guess the last word
+                <div class="setting-container flex-container justify-space-between">
+                    <div class="setting-info flex-container justify-space-between align-start">
+                        <div class="setting-name">
+                            Common final word
+                            <div class="setting-description">
+                                all teams can guess the last word
+                            </div>
                         </div>
+                        <div class="setting-value"></div>
                     </div>
-                    <div class="setting-value"></div>
+                    <label for="common-final-word" class="checkbox-label">
+                        <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord" aria-label="all teams can guess the last word" checked>
+                    </label>
                 </div>
-                <label for="common-final-word" class="checkbox-label">
-                    <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord" aria-label="all teams can guess the last word" checked>
-                </label>
-            </div>
-            <div class="setting-container flex-container justify-space-between">
-                <div class="setting-info flex-container justify-space-between align-start">
-                    <div class="setting-name">
-                        Game sound
-                        <div class="setting-description">
-                            enable sound effects
+                <div class="setting-container flex-container justify-space-between">
+                    <div class="setting-info flex-container justify-space-between align-start">
+                        <div class="setting-name">
+                            Game sound
+                            <div class="setting-description">
+                                enable sound effects
+                            </div>
                         </div>
+                        <div class="setting-value"></div>
                     </div>
-                    <div class="setting-value"></div>
+                    <label for="game-sound" class="checkbox-label">
+                        <input type="checkbox" id="game-sound" class="checkbox-input" name="gameSound" aria-label="enable sound effects" checked>
+                    </label>
                 </div>
-                <label for="game-sound" class="checkbox-label">
-                    <input type="checkbox" id="game-sound" class="checkbox-input" name="gameSound" aria-label="enable sound effects" checked>
-                </label>
             </div>
         </div>
 
-        <a href="categories.html" id="next" class="flex-container justify-center align-center run-button">Next</a>
+        <a href="categories.html" id="next" class="flex-container justify-center align-center run-button hoverable">Next</a>
     </div>
     <script src="./assets/js/script.js" type="module"></script>
     <script src="./assets/js/settings_handler.js" type="module"></script>
