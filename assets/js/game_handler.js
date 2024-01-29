@@ -417,11 +417,9 @@ function startRound() {
     let roundTime = gameOptions.settings.roundDuration;
     const timerElement = document.getElementById("round-timer");
     
-    // Set roundWords if we don't have it
-    if (!('roundWords' in gameOptions)) {
-        gameOptions.roundWords = [];
-        setGameOptions(gameOptions);
-    }
+    // Create a new roundWords array
+    gameOptions.roundWords = [];
+    setGameOptions(gameOptions);
 
     // Set random word to control and change it style by adding new class
     const controlElement = document.getElementById("control");
