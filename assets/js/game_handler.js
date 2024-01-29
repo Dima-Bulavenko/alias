@@ -721,6 +721,27 @@ function finishRound() {
 
 // ---------------------------------------------------------------
 
+/**
+ * Run a setup function based on the current stage name 
+ */
+function loadPageHandler() {
+    const gameOptions = getGameOptions();
+
+    // Get the current stage object
+    const currentStage = gameOptions.stages.find(stage => stage.isCurrent);
+
+    // Show the current stage section and hide the others
+    toggleSection();
+
+    // Run the setup function based on the current stage name
+    if (currentStage.name === "before-round") {
+        setupBeforeRoundStage();
+    } else if (currentStage.name === "round") {
+        setupRoundStage();
+    } else {
+        setAfterRoundStage();
+    }
+}
 
 window.addEventListener("DOMContentLoaded", function () {
     const gameOptions = getGameOptions();
