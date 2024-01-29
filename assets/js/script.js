@@ -1,4 +1,20 @@
 /**
+ * Get game options from local storage
+ */
+function getGameOptions() {
+    const gameOptions = JSON.parse(localStorage.getItem("gameOptions"));
+    return gameOptions;
+}
+
+/**
+ * Set game options to local storage
+ */
+function setGameOptions(obj) {
+    localStorage.setItem("gameOptions", JSON.stringify(obj));
+
+}
+
+/**
  * Checks if the given object has a valid 'teams' property.
  * The 'teams' property should be an array with a length between 2 and 6.
  */
@@ -73,3 +89,5 @@ function validateGameOptions() {
 window.addEventListener("load", function () {
     validateGameOptions();
 });
+
+export { getGameOptions, setGameOptions };
