@@ -108,6 +108,8 @@ project description
 
 * Didn't use "let" keyword in "for of" loop. ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/16a062ede4b1a283a9951cfc04ca586b7230a311))
 
+* Correct behavior for counting words when user refreshes page during a round ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/50c7b34c1806f54ff64194f0e87018994dc26d64))
+
 [Back to top](<#contents>)
 
 ## Bugs Unfixed
