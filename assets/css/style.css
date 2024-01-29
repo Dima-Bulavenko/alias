@@ -553,3 +553,35 @@ a {
     flex: 1;
     padding: 40px 20px 10px 20px;
 }
+
+
+/* STYLE FRO win.html */
+.intro-text {
+    max-width: 75%;
+    margin: 40px auto 20px auto;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: var(--block-background);
+    border-radius: 20px;
+}
+
+#rules-container {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20%;
+    padding: 20px 20px 20px 20px;
+
+}
+
+.rule-item {
+    margin-bottom: 10%;
+}
+
+.rule-icon {
+    font-size: 40px;
+    color: var(--highted-text);
+}
+
+.rule-text {
+    padding-left: 10px;
+}
