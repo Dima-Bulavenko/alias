@@ -135,6 +135,7 @@ project description
 
 * Custom checkbox styles [alvarotrigo.com](https://alvarotrigo.com/blog/css-checkbox-styles/)
 
+* Wavy backgrounds [fireship.io](https://fireship.io/lessons/wavy-backgrounds/)
 
 [Back to top](<#contents>)
 
