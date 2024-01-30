@@ -371,6 +371,19 @@ function swipeHandler() {
 }
 
 
+function handlePCControls() {
+    const control = document.getElementById("control");
+    const isGuessed = this.id === 'add-guess';
+    const delay = 0.2;
+
+    control.style.transition = `${delay}s linear`;
+    control.style.opacity = "0";
+    control.style.transform = `translate(${isGuessed ? "-" : ""}500px, 0) scale(0.5)`;
+
+    setTimeout(handleRound, delay * 1000 + 100, isGuessed);
+}
+
+
 /**
  * Execute necessary functions to implement logic of round stage.
  */
@@ -405,7 +418,7 @@ function handleRound(isGuessed) {
         }
     } else {
         // If the round is not finished create new swipeHandler and new control
-        swipeAreaElement.appendChild(createControl());
+        swipeAreaElement.prepend(createControl());
         swipeHandler();
     }
 }
@@ -437,6 +450,9 @@ function startRound() {
     }, 1000);
     
     this.removeEventListener("click", startRound);
+
+    document.getElementById("add-guess").addEventListener("click", handlePCControls);
+    document.getElementById("add-miss").addEventListener("click", handlePCControls);
 }
 
 /**
