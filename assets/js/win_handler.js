@@ -24,15 +24,17 @@ window.addEventListener('DOMContentLoaded', function() {
     document.getElementById("winner-score").innerText = winner.score;
 
     const teamsInfoElement = document.querySelector(".winner-teams-info");
-    console.log(teamsInfoElement);
-    for (let team of teams) {
-        const teamInfoElement = teamsInfoElement.querySelector(".winner-team-info").cloneNode(true);
-        console.log(teamInfoElement);
-        teamInfoElement.querySelector(".name").innerText = team.name;
-        teamInfoElement.querySelector(".points").innerText = team.score;
+    const teamInfoElement = teamsInfoElement.querySelector(".winner-team-info");
 
-        teamsInfoElement.appendChild(teamInfoElement);
+    for (let team of teams) {
+        const cloneTeamInfoElement = teamInfoElement.cloneNode(true);
+        cloneTeamInfoElement.querySelector(".name").innerText = team.name;
+        cloneTeamInfoElement.querySelector(".points").innerText = team.score;
+
+        teamsInfoElement.appendChild(cloneTeamInfoElement);
     }
+    
+    teamInfoElement.remove();
 
     document.querySelector("#menu")
     .addEventListener("click", event => window.location.href = "./index.html");
