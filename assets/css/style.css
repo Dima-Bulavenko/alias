@@ -885,4 +885,25 @@ a {
         background-color: var(--secondary-text);
         color: var(--body-background);
     }
+
+    /* style for #who-guessed element */
+    #who-guessed {
+        width: 30%;
+        text-align: center;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
+    }
+
+    #who-guessed > .team {
+        background-color: var(--block-background);
+        width: 40%;
+        margin: 20px auto;
+        border: none !important;
+        border-radius: 15px;
+        transition: 0.5s;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
+    }
+
+    #who-guessed > .team:hover {
+        filter: brightness(80%);
+    }
 }
