@@ -28,7 +28,7 @@ function teamsIsValid(obj) {
  * The 'settings' property should be an object with 5 properties:
  */
 function settingsIsValid(obj) {
-    return "settings" in obj && Object.keys(obj.settings).length === 5;
+    return "settings" in obj && Object.keys(obj.settings).length === 4;
 }
 
 
