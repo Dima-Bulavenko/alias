@@ -839,13 +839,13 @@ a {
     }
 
     .right-border {
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50% !important;
+        border-bottom-right-radius: 50% !important;
     }
 
     .left-border {
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50% !important;
+        border-bottom-left-radius: 50% !important;
     }
 
     .bubble::after {
@@ -933,5 +933,34 @@ a {
 
     .team-info {
         align-items: center;
+    }
+    
+
+    /* STYLE FOR win.html */
+    .winner-container {
+        height: 100%;
+        align-items: center;
+    }
+
+    #winner {
+        height: 70%;
+        border-radius: unset;
+    }
+
+    .winner-teams-info {
+        background-color: var(--main-color);
+        max-width: 40%;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .winner-team-info {
+        margin: 20px auto;
+        background-color: var(--block-background);
+        align-items: center;
+        padding: 10px;
+        width: 60%;
+        border-radius: 10px;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
     }
 }
