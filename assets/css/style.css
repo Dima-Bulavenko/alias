@@ -630,15 +630,13 @@ a {
     .intro-text {
         width: 50%;
         max-width: 400px;
-        margin-top: 10%;
         box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
     }   
 
     #rules-container {
         padding: 40px 20px 40px 20px;
         background-color: var(--block-background);
-        margin-top: 10%;
-        margin: 10% auto 0 auto;
+        margin: 50px auto 0 auto;
         width: 70%;
         max-width: 550px;
         border-radius: 5%;
