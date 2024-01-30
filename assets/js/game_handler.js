@@ -435,6 +435,8 @@ function startRound() {
         }
         timerElement.innerText = formatTime(roundTime);
     }, 1000);
+    
+    this.removeEventListener("click", startRound);
 }
 
 /**
