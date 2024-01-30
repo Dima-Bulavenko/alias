@@ -112,6 +112,8 @@ project description
 
 * Correct behavior of "#control" element when user click on it multiple times ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/ec194a283515699a9f5402085f91490e42a103f5))
 
+* Template of ".winner-team-info" wasn't deleted and appears on page. ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/9176d5ec4656e959dc2b0cba8c989f1b5b3d4644))
+
 [Back to top](<#contents>)
 
 ## Bugs Unfixed
