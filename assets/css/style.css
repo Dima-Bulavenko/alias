@@ -812,4 +812,29 @@ a {
         margin: 0 auto;
     }
 
+    /* STYLE FRO game.html */
+    .game-state {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #stat-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20%;
+        height: 70%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .bubble::after {
+        display: none;
+    }
+
+    #run-round {
+        border: none;
+    }
+
 }
