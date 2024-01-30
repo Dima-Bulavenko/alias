@@ -110,6 +110,8 @@ project description
 
 * Correct behavior for counting words when user refreshes page during a round ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/50c7b34c1806f54ff64194f0e87018994dc26d64))
 
+* Correct behavior of "#control" element when user click on it multiple times ([fix commit](https://github.com/Dima-Bulavenko/alias/commit/ec194a283515699a9f5402085f91490e42a103f5))
+
 [Back to top](<#contents>)
 
 ## Bugs Unfixed
