@@ -656,6 +656,16 @@ a {
     header {
         background-color: var(--block-background);
     }
+
+    #navigation > div, 
+    #outer-links > div {
+        transition: 0.3s;
+    }
+
+    #navigation > div:hover, 
+    #outer-links > div:hover {
+        transform: scale(1.1);
+    }
     
     .hoverable {
         transition: 0.5s;
