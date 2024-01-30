@@ -369,7 +369,7 @@ a {
 }
 
 
-/* STYLE FRO game.html */
+/* STYLE FOR game.html */
 /* before-round section */
 .game-state {
     height: 100%;
@@ -411,6 +411,10 @@ a {
 
 
 /* round section */
+#pc-controls {
+    display: none;
+}
+
 #guessed-words, #missed-words {
     width: 100%;
     gap: 10px;
@@ -537,7 +541,7 @@ a {
 }
 
 
-/* STYLE FRO win.html */
+/* STYLE FOR win.html */
 
 .winner-container {
     padding: 50px 0px 20px 0px;
@@ -588,7 +592,7 @@ a {
 }
 
 
-/* STYLE FRO win.html */
+/* STYLE FOR win.html */
 .intro-text {
     max-width: 75%;
     margin: 40px auto 20px auto;
@@ -622,7 +626,7 @@ a {
 
 /* Media query: tablets and larger (768 and up) */
 @media screen and (min-width: 768px) {
-    /* STYLE FRO rules.html */
+    /* STYLE FOR rules.html */
     .intro-text {
         width: 50%;
         max-width: 400px;
@@ -666,7 +670,7 @@ a {
         align-items: center;
     }
 
-    /* STYLE FRO index.html */
+    /* STYLE FOR index.html */
     #rules-section {
         display: flex;
         flex-direction: column;
@@ -720,7 +724,7 @@ a {
         transform: scale(1.1);
     }
 
-    /* STYLE FRO teams.html */
+    /* STYLE FOR teams.html */
     .left-settings {
         margin-left: 5dvw;
         padding: 40px;
@@ -766,7 +770,7 @@ a {
         transform: scale(1.1);
     }
 
-    /* STYLE FRO settings.html */
+    /* STYLE FOR settings.html */
     .settings {
         height: 100%;
         display:flex;
@@ -795,7 +799,7 @@ a {
         filter: brightness(80%);
     }
 
-    /* STYLE FRO categories.html */
+    /* STYLE FOR categories.html */
     .category-container{
         margin-bottom: 30px;
         background-color: var(--block-background);
@@ -812,21 +816,32 @@ a {
         margin: 0 auto;
     }
 
-    /* STYLE FRO game.html */
+    /* STYLE FOR game.html */
     .game-state {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-    #stat-container {
+    #stat-container,
+    #guessed-words, 
+    #missed-words {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 20%;
         height: 70%;
+        
+    }
+
+    .right-border {
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
+    }
+
+    .left-border {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
     }
 
     .bubble::after {
