@@ -43,19 +43,34 @@ The objective of this project is to create a dynamic front-end website that adap
 
 
 # User Experience UX
-[Back to top](<#contents>)
 
 ## Target Audience
+
+This site caters to a wide-ranging audience, including individuals of different ages, by providing various levels of difficulty tailored to accommodate diverse skill levels.
+
 [Back to top](<#contents>)
 
 ## User Stories
+
+- Enable users to access clear instructions on how to play the game.
+- Allow users to reset the game at any point for a fresh start.
+- Ensure a user-friendly interface that clearly displays the game elements.
+- Display the current score of the game for users to stay informed about their progress.
+- Implement clearly labeled buttons to give users intuitive control over the game.
+
 [Back to top](<#contents>)
 
 ## Site Aims
+
+The goal of the site is to offer friends an enjoyable and amusing time playing this game together.
+
 [Back to top](<#contents>)
 
 
 # Design
+
+The site's design draws inspiration from the mobile application of the game "[play.google.com](https://play.google.com/store/apps/details?id=com.greylab.alias&hl=en_US&pli=1)". I've modified the structure of certain elements, completely overhauled the color scheme, and crafted an appearance specifically optimized for laptop screens.
+
 [Back to top](<#contents>)
 
 ## Wireframes
@@ -65,6 +80,8 @@ The objective of this project is to create a dynamic front-end website that adap
 [Back to top](<#contents>)
 
 ## Color Scheme
+![Color palettes.](./assets/images/readme/color_palettes.png)
+
 [Back to top](<#contents>)
 
 ## Typography
