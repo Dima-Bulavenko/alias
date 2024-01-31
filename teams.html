@@ -53,8 +53,8 @@
         </div>
     </header>
 <div id="content" class=" flex-container flex-column justify-space-between">
-        <div class="left-settings flex-container flex-column">
-            <div id="teams">
+        <div id="teams-container" class=" left-settings outer-container flex-container flex-column">
+            <div id="teams" class="inner-container">
                 <div class="team-container flex-container flex-container justify-space-between ">
                     <div class="team"></div>
                     <div class="delete-team hoverable" hidden><i class="fa-solid fa-minus"></i></div>
@@ -66,7 +66,7 @@
             </div>
             <div id="add-team" class="hoverable flex-container justify-center align-center"><i class="fa-solid fa-plus"></i></div>
         </div>
-        <a href="./settings.html" id="next" class="hoverable flex-container justify-center align-center run-button">Next</a>
+        <a href="./settings.html" id="next" class="flex-container justify-center align-center run-button">Next</a>
     </div>
     <script src="./assets/js/team_handler.js" type="module"></script>
     <script src="./assets/js/script.js" type="module"></script>
