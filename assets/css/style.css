@@ -6,7 +6,7 @@
 }
 
 :root {
-    --main-font-family: 'Inter Tight', sans-serif;
+    --main-font-family: "Inter Tight", sans-serif;
     --element-off: rgb(140, 140, 140);
     --main-color: rgb(202, 204, 144);
     --main-color-transparent: rgba(202, 204, 144, 0.5);
@@ -30,13 +30,13 @@ body {
 }
 
 /* Style for header element */
-header{
+header {
     padding: 0px 20px;
     background-color: var(--main-color);
 }
 
-#navigation{
-    gap: 20px
+#navigation {
+    gap: 20px;
 }
 
 .nav-active {
@@ -122,7 +122,7 @@ a {
 
 .bubble.flip::after {
     top: calc(-1 * var(--bubble-height));
-    transform: none;  
+    transform: none;
 }
 
 /* Flex classes */
@@ -162,7 +162,6 @@ a {
     justify-content: start;
 }
 
-
 /* Content style */
 #content {
     flex: 1;
@@ -195,7 +194,7 @@ a {
     padding-bottom: 30px;
     width: 100%;
     background-color: var(--block-background);
-    height: 250px
+    height: 250px;
 }
 
 .option-item {
@@ -204,7 +203,6 @@ a {
     border-radius: 25px;
     margin-top: 30px;
 }
-
 
 /* STYLE FOR teams.html */
 .team-container {
@@ -221,7 +219,6 @@ a {
     background-color: var(--main-color);
     box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
 }
-
 
 /* STYLE FOR setting.html */
 .setting-container {
@@ -252,7 +249,7 @@ a {
     border-radius: 3px;
     max-width: 300px;
     outline: none;
-    background: var(--text); 
+    background: var(--text);
 }
 
 .range-input::-webkit-slider-thumb {
@@ -269,12 +266,12 @@ a {
 
 /* This class increases clickable area for checkbox input */
 .checkbox-label {
-   display: block;
-   height: 25px;
-   width: 30px;
-   cursor: pointer;
-   align-self: center;
-   margin-right: 15px;
+    display: block;
+    height: 25px;
+    width: 30px;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 15px;
 }
 
 .checkbox-input {
@@ -288,7 +285,7 @@ a {
     width: 5px;
     margin-top: 5px;
     border-radius: 25px;
-    cursor: pointer;    
+    cursor: pointer;
     transition: 0.5s;
     background-color: var(--main-color-transparent);
 }
@@ -313,15 +310,17 @@ a {
 /* Animation to change box-shadow */
 @keyframes shadow-grow {
     0% {
-        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3),
+            1px 1px 1px rgb(0, 0, 0, 0.5);
     }
     50% {
-        box-shadow: 0px 0px 0px 5px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 0px 5px rgba(224, 116, 226, 0.3),
+            1px 1px 1px rgb(0, 0, 0, 0.5);
     }
     100% {
-        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3), 1px 1px 1px rgb(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 0px 0px rgba(224, 116, 226, 0.3),
+            1px 1px 1px rgb(0, 0, 0, 0.5);
     }
-    
 }
 .checkbox-input:checked {
     width: 40px;
@@ -332,9 +331,8 @@ a {
     left: 18px;
 
     /* Disable animation when element is checked */
-    animation: none
+    animation: none;
 }
-
 
 /* STYLE FOR categories.html */
 .category-image {
@@ -345,7 +343,6 @@ a {
     height: 100%;
 }
 .category-container {
-    
     width: 100%;
     padding: 15px;
     border-top: 2px solid var(--text);
@@ -361,13 +358,12 @@ a {
     border-bottom: 2px solid var(--text);
 }
 
-.category-description{
+.category-description {
     margin-top: 3px;
     font-size: 15px;
     font-weight: 600;
     color: var(--element-off);
 }
-
 
 /* STYLE FOR game.html */
 /* before-round section */
@@ -387,7 +383,7 @@ a {
 
 .team-stat-item {
     padding: 5px 0px;
-    font-size: 17px
+    font-size: 17px;
 }
 
 .second-text {
@@ -409,23 +405,24 @@ a {
     font-weight: 800;
 }
 
-
 /* round section */
 #pc-controls {
     display: none;
 }
 
-#guessed-words, #missed-words {
+#guessed-words,
+#missed-words {
     width: 100%;
     gap: 10px;
 }
 
 .team-name {
-    color: var(--secondary-text)
+    color: var(--secondary-text);
 }
 
-#count-guessed, #count-missed {
-    font-size: 30px
+#count-guessed,
+#count-missed {
+    font-size: 30px;
 }
 
 #guessed-words {
@@ -436,7 +433,7 @@ a {
 #missed-words {
     background-color: var(--element-off);
     padding: 0 0 20px 0;
-    color: var(--body-background)
+    color: var(--body-background);
 }
 
 #round-timer {
@@ -463,7 +460,7 @@ a {
 }
 
 #control.word-control {
-    background-color: var(--main-color)
+    background-color: var(--main-color);
 }
 
 #who-guessed {
@@ -486,13 +483,11 @@ a {
 #who-guessed .team {
     font-weight: 600;
     padding: 10px 15px;
-    
 }
 
 #who-guessed .team:not(:last-child) {
-    border-bottom: 2px solid black
+    border-bottom: 2px solid black;
 }
-
 
 /* style after-round section */
 .info {
@@ -526,7 +521,7 @@ a {
 }
 
 .team-info .name {
-    color: var(--highted-text)
+    color: var(--highted-text);
 }
 
 .words-item {
@@ -537,9 +532,8 @@ a {
 }
 
 .words-item i {
-    font-size: 25px
+    font-size: 25px;
 }
-
 
 /* STYLE FOR win.html */
 
@@ -591,7 +585,6 @@ a {
     padding: 40px 20px 10px 20px;
 }
 
-
 /* STYLE FOR win.html */
 .intro-text {
     max-width: 75%;
@@ -607,7 +600,6 @@ a {
     font-weight: 500;
     margin-top: 20%;
     padding: 20px 20px 20px 20px;
-
 }
 
 .rule-item {
@@ -623,7 +615,6 @@ a {
     padding-left: 10px;
 }
 
-
 /* Media query: tablets and larger (768 and up) */
 @media screen and (min-width: 768px) {
     /* STYLE FOR rules.html */
@@ -631,7 +622,7 @@ a {
         width: 50%;
         max-width: 400px;
         box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
-    }   
+    }
 
     #rules-container {
         padding: 40px 20px 40px 20px;
@@ -655,16 +646,16 @@ a {
         background-color: var(--block-background);
     }
 
-    #navigation > div, 
+    #navigation > div,
     #outer-links > div {
         transition: 0.3s;
     }
 
-    #navigation > div:hover, 
+    #navigation > div:hover,
     #outer-links > div:hover {
         transform: scale(1.1);
     }
-    
+
     .hoverable {
         transition: 0.5s;
     }
@@ -738,8 +729,8 @@ a {
     #rules-section > #rules-container {
         margin: auto 0;
         padding: 20px;
-        width: 100%; 
-        background-color: var(--main-color); 
+        width: 100%;
+        background-color: var(--main-color);
     }
 
     #game-name {
@@ -757,17 +748,17 @@ a {
         margin-bottom: 19px;
         font-size: 15px;
     }
-    
-    #logo-container, #options > *:not(#start-game) {
-        display: none
-    }
-    
-    #options {
-        padding: 0;
-        width: auto;    
-        background: none;
+
+    #logo-container,
+    #options > *:not(#start-game) {
+        display: none;
     }
 
+    #options {
+        padding: 0;
+        width: auto;
+        background: none;
+    }
 
     /* STYLE FOR teams.html */
     .left-settings {
@@ -826,7 +817,6 @@ a {
         color: var(--secondary-text);
     }
 
-    /* .checkbox-input::before:hover, */
     .range-input::-webkit-slider-thumb:hover {
         transition: 0.5s;
         filter: brightness(80%);
@@ -857,7 +847,7 @@ a {
         box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.5);
     }
 
-    .category-container{
+    .category-container {
         padding: 0;
         margin-bottom: 30px;
         background-color: var(--block-background);
@@ -886,19 +876,18 @@ a {
     }
     .info,
     #stat-container,
-    #guessed-words, 
+    #guessed-words,
     #missed-words {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 30%;
         height: 70%;
-        
     }
 
     #stat-container {
         padding: 20px 50px 20px 20px;
-    }   
+    }
 
     #control:hover {
         transform: scale(1.1);
@@ -932,12 +921,12 @@ a {
     #pc-controls {
         display: flex;
         justify-content: space-between;
-        gap: 40px
+        gap: 40px;
     }
 
     #pc-controls > div {
         text-align: center;
-        width : 100px;
+        width: 100px;
         padding: 10px;
         font-size: 25px;
         border-radius: 10px;
@@ -1005,7 +994,6 @@ a {
     .team-info {
         align-items: center;
     }
-    
 
     /* STYLE FOR win.html */
     .winner-container {

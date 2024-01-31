@@ -71,7 +71,6 @@ function validateGameOptions() {
 
         // Check if the gameOptions is an object.
         if (!isObject(gameOptions)) {
-            console.log(isObject(gameOptions))
             isAllValid = false;
         } else {
             isAllValid = validationFunctionsByPath[currentPath].every(func => func(gameOptions));

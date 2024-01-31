@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Font awesome -->
@@ -24,7 +23,7 @@
 </head>
 
 <body>
-<header class="flex-container justify-space-between align-center">
+    <header class="flex-container justify-space-between align-center">
         <div id="navigation" class="flex-container">
             <div class="nav-item">
                 <a href="./index.html" class="navigation-item">
@@ -52,7 +51,7 @@
             </div>
         </div>
     </header>
-<div id="content" class=" flex-container flex-column justify-space-between">
+    <div id="content" class=" flex-container flex-column justify-space-between">
         <div id="settings-container" class="left-settings outer-container">
             <div class="settings inner-container">
                 <div class="setting-container flex-container flex-column justify-space-between">
@@ -65,7 +64,8 @@
                         </div>
                         <div class="setting-value"></div>
                     </div>
-                    <input type="range" id="word-count" name="wordCount" aria-label="word count" class="range-input" min="10" max="150" step="5" value="30">
+                    <input type="range" id="word-count" name="wordCount" aria-label="word count" class="range-input"
+                        min="10" max="150" step="5" value="30">
                 </div>
                 <div class="setting-container flex-container flex-column justify-space-between">
                     <div class="setting-info flex-container justify-space-between align-start">
@@ -77,7 +77,8 @@
                         </div>
                         <div class="setting-value"></div>
                     </div>
-                    <input type="range" id="round-duration" aria-label="round duration" name="roundDuration" class="range-input" min="10" max="120" step="5" value="60">
+                    <input type="range" id="round-duration" aria-label="round duration" name="roundDuration"
+                        class="range-input" min="10" max="120" step="5" value="60">
                 </div>
                 <div class="setting-container flex-container justify-space-between">
                     <div class="setting-info flex-container justify-space-between align-start">
@@ -90,7 +91,8 @@
                         <div class="setting-value"></div>
                     </div>
                     <label for="penalty-miss" class="checkbox-label">
-                        <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss" aria-label="missed word deducts one point" checked>
+                        <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss"
+                            aria-label="missed word deducts one point" checked>
                     </label>
                 </div>
                 <div class="setting-container flex-container justify-space-between">
@@ -104,13 +106,15 @@
                         <div class="setting-value"></div>
                     </div>
                     <label for="common-final-word" class="checkbox-label">
-                        <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord" aria-label="all teams can guess the last word" checked>
+                        <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord"
+                            aria-label="all teams can guess the last word" checked>
                     </label>
-                </div>  
+                </div>
             </div>
         </div>
 
-        <a href="categories.html" id="next" class="flex-container justify-center align-center run-button hoverable">Next</a>
+        <a href="categories.html" id="next"
+            class="flex-container justify-center align-center run-button hoverable">Next</a>
     </div>
     <script src="./assets/js/script.js" type="module"></script>
     <script src="./assets/js/settings_handler.js" type="module"></script>

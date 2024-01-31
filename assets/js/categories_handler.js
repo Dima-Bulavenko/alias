@@ -29,7 +29,7 @@ function createWordList() {
             // Save the words to the gameOptions object
             gameOptions.words = data;
             setGameOptions(gameOptions);
-            
+
             // Redirect to the game page
             window.location.href = "./game.html";
 
@@ -47,7 +47,7 @@ function createWordList() {
 function setType(event) {
     const gameType = this.id;
     const gameOption = JSON.parse(localStorage.getItem("gameOptions"));
-    
+
     if (gameType === "easy") {
         gameOption.type = "easy";
     } else if (gameType === "medium") {

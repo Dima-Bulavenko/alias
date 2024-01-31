@@ -54,7 +54,7 @@ function saveSettings() {
         // If the input type is checkbox, save its checked state
         if (setting.type === "checkbox") {
             gameOptions.settings[setting.name] = setting.checked;
-        } 
+        }
         // For other input types, save their current value
         else {
             gameOptions.settings[setting.name] = setting.value;
@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector("#next").addEventListener("click", function (event) {
         event.preventDefault();
-            
+
         saveSettings();
 
         window.location.href = this.href;
@@ -89,4 +89,4 @@ window.addEventListener("DOMContentLoaded", function () {
 
     }
 })
-    
+
