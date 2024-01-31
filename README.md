@@ -1,10 +1,13 @@
 # Project name
 
-project description
 
-[Link to the live site]()
+Alias is an online browser game that revolves around teams, each comprising two or more members. In this game, one team member is assigned the task of explaining a given word using alternative words to their fellow team members.
 
-![Site Responsive Design]()
+The objective of this project is to create a dynamic front-end website that adapts to user interactions, modifying the presentation of information to fulfill the user's objectives.
+
+[Link to the live site](https://dima-bulavenko.github.io/alias/)
+
+![Site Responsive Design](./assets/images/readme/responsive_view.PNG)
 
 # Contents
 
