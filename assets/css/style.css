@@ -355,9 +355,10 @@ a {
 
 .game-difficulty {
     text-align: center;
+    font-size: 20px;
     margin: 0 auto;
     background-color: var(--body-background);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
 }
 
