@@ -260,26 +260,9 @@ The `"Win section"` has three main features.
 
 [Back to top](#contents)
 
-#Testing
-[Back to top](#contents)
+# Testing
 
-## Code Validation
-
-[Back to top](#contents)
-
-## Responsiveness
-
-[Back to top](#contents)
-
-## Lighthouse testing
-
-[Back to top](#contents)
-
-## Accessibility testing
-
-[Back to top](#contents)
-
-## Manual testing
+View testing [here](./docs/TESTING.md#testing)
 
 [Back to top](#contents)
 
