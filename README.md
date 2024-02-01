@@ -16,26 +16,35 @@ The objective of this project is to create a dynamic front-end website that adap
     -   [Site Aims](#site-aims)
 -   [Design](#design)
     -   [Wireframes](#wireframes)
-    -   [Site Structure](#site-structure)
+        -   [Home page on Desktop](#home-page-on-desktop)
+        -   [Home page on Mobile](#home-page-on-mobile)
+        -   [Game page on Desktop](#game-page-on-desktop)
+        -   [Game page on Mobile](#game-page-on-mobile)
     -   [Color Scheme](#color-scheme)
     -   [Typography](#typography)
 -   [Features](#features)
-    -   [Navigation](#navigation)
+    -   [Teams settings](#teams-settings)
+    -   [Game settings](#game-settings)
+    -   [Categories settings](#categories-settings)
+    -   [Game section](#game-section)
+        -   [Before-round section](#before-round-section)
+        -   [Round section](#round-section)
+        -   [After Round section](#after-round-section)
+        -   [Who guessed pop-up menu](#who-guessed-pop-up-menu)
+    -   [Win section](#win-section)
     -   [Future Features](#future-features)
-    -   [Code Validation](#code-validation)
-    -   [Responsiveness](#responsiveness)
-    -   [Lighthouse testing](#lighthouse-testing)
-    -   [Accessibility testing](#accessibility-testing)
-    -   [Manual testing](#manual-testing)
+-   [Testing](#testing)
 -   [Bugs](#bugs)
     -   [Bugs Fixed](#bugs-fixed)
     -   [Bugs Unfixed](#bugs-unfixed)
 -   [Technologies used](#technologies-used)
 -   [Deploying](#deploying)
+-   [How to Clone](#how-to-clone)
 -   [Credits](#credits)
     -   [Content](#content)
     -   [Media](#media)
 -   [Acknowledgements](#acknowledgements)
+-   [Codeanywhere Reminders](#codeanywhere-reminders)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -292,15 +301,41 @@ View testing [here](./docs/TESTING.md#testing)
 
 # Technologies used
 
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - provides interactivity of site
+-   [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) - Provides the structure of the site information,
+    elements and website content.
+-   [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Provides the styling of the HTML content.
+-   [Balsamiq](https://balsamiq.com/) - Wireframing software used to plan and design website templates.
+-   [GitHub](https://github.com/) - An online host for web and software development projects. Used to store the repository
+    and deploy the finished website.
+-   [Git](https://git-scm.com/) - Software for tracking changes to files. Used with GitPod to add, commit and push code
+    changes to the repository on GitHub.
+-   [Google PageSpeed Insights](https://pagespeed.web.dev/) was employed to assess the performance, accessibility, best practices, and SEO aspects of the web pages.
+-   [ChatGPT](https://chat.openai.com/) was used to create more readable and sensible text.
+
 [Back to top](#contents)
 
 # Deploying
 
+The Alias is presently hosted and accessible on GitHub Pages. The deployment process is managed as follows:
+
+**Repository Configuration**: The GitHub repository for my project is configured to deploy automatically from the `main` branch to GitHub Pages.
+
+**Push to Deploy**: Whenever I push new changes to the `main` branch, GitHub Pages initiates an automatic deployment of the updated version, ensuring it becomes instantly available online.
+
+**Accessing the Live Application**: You can access the live application by visiting this link: [Alias](https://dima-bulavenko.github.io/alias/index.html).
+
+# How to Clone
+
+1.  Log into your account on GitHub
+2.  Go to the repository of this project [Alias](https://github.com/Dima-Bulavenko/alias)
+3.  Click on the **code** button, and copy your preferred clone link.
+4.  Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5.  Type `git clone` into the terminal, paste the link you copied in step 3 and press enter.
+
 [Back to top](#contents)
 
 # Credits
-
-[Back to top](#contents)
 
 ## Content
 
@@ -330,4 +365,34 @@ View testing [here](./docs/TESTING.md#testing)
 
 # Acknowledgements
 
+I want to convey my immense gratitude to my mentor, [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/), for pinpointing my mistakes and providing advice on how to rectify them. Special thanks to my friends who assisted in testing the application, and to the Slack community, always ready to offer valuable tips at any time.
+
 [Back to top](#contents)
+
+# Codeanywhere Reminders
+
+To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+
+`python3 -m http.server`
+
+A button should appear to click: _Open Preview_ or _Open Browser_.
+
+To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+
+`http_server`
+
+To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+
+A button should appear to click: _Open Preview_ or _Open Browser_.
+
+In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+
+To log into the Heroku toolbelt CLI:
+
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
+3. Copy the key
+4. In Codeanywhere, from the terminal, run `heroku_config`
+5. Paste in your API key when asked
+
+You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
