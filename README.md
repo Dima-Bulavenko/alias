@@ -297,6 +297,8 @@ View testing [here](./docs/TESTING.md#testing)
 
 ## Bugs Unfixed
 
+-    [licking the "Change Word Status" button multiple times is leading to the duplication of the team block within the "#who-guessed" element.](https://github.com/Dima-Bulavenko/alias/issues/1)
+
 [Back to top](#contents)
 
 # Technologies used
