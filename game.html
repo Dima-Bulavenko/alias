@@ -1,125 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Favicons -->
-    <link type="image/png" sizes="16x16" rel="icon" href="./assets/images/favicons/bubbles-16.png">
-    <link type="image/png" sizes="32x32" rel="icon" href="./assets/images/favicons/bubbles-32.png">
-    <link type="image/png" sizes="96x96" rel="icon" href="./assets/images/favicons/bubbles-96.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="./assets/images/favicons/bubbles-76.png">
+        <!-- Favicons -->
+        <link
+            type="image/png"
+            sizes="16x16"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-16.png" />
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-32.png" />
+        <link
+            type="image/png"
+            sizes="96x96"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-96.png" />
+        <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="76x76"
+            href="./assets/images/favicons/bubbles-76.png" />
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/e212569926.js" crossorigin="anonymous"></script>
+        <!-- Font awesome -->
+        <script
+            src="https://kit.fontawesome.com/e212569926.js"
+            crossorigin="anonymous"></script>
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <title>Game</title>
-</head>
+        <title>Game</title>
+    </head>
 
-<body>
-    <header class="flex-container justify-space-between align-center">
-        <div id="navigation" class="flex-container">
-            <div class="nav-item">
-                <a href="./index.html" class="navigation-item">
-                    <img src="./assets/images/a-100.png" alt="Home">
-                </a>
+    <body>
+        <header class="flex-container justify-space-between align-center">
+            <div id="navigation" class="flex-container">
+                <div class="nav-item">
+                    <a href="./index.html" class="navigation-item">
+                        <img src="./assets/images/a-100.png" alt="Home" />
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="./rules.html" class="navigation-item">
+                        <img
+                            src="./assets/images/question-mark-100.png"
+                            alt="Rules" />
+                    </a>
+                </div>
             </div>
-            <div class="nav-item">
-                <a href="./rules.html" class="navigation-item">
-                    <img src="./assets/images/question-mark-100.png" alt="Rules">
-                </a>
+            <div id="outer-links" class="flex-container">
+                <div class="outer-link">
+                    <a
+                        href="https://www.linkedin.com/in/dima-bulavenko-07a162239/"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit my LinkedIn page (open in new tab)">
+                        <i class="fa-brands fa-linkedin font-aw-icon"></i>
+                    </a>
+                </div>
+                <div class="outer-link">
+                    <a
+                        href="https://github.com/Dima-Bulavenko/alias"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit GitHub repository of this project (open in new tab)">
+                        <i class="fa-brands fa-square-github font-aw-icon"></i>
+                    </a>
+                </div>
             </div>
+        </header>
+        <div id="content">
+            <section
+                id="before-round"
+                class="game-state flex-container flex-column justify-space-between">
+                <div id="stat-container" class="bubble right-border">
+                    <div
+                        class="stat-info-container flex-container align-center justify-space-between">
+                        <div>Amount of words to win</div>
+                        <div id="word-count"></div>
+                    </div>
+                    <div id="stat"></div>
+                </div>
+                <div
+                    id="round-info"
+                    class="flex-container flex-column justify-center align-center">
+                    <div id="round-count"></div>
+                    <div class="second-text">prepare for the round</div>
+                    <div id="prepared-team"></div>
+                </div>
+                <button id="run-round" class="run-button">Let's go</button>
+            </section>
+
+            <section
+                id="round"
+                class="game-state flex-container flex-column justify-space-between align-center">
+                <div
+                    id="guessed-words"
+                    class="flex-container flex-column align-center bubble right-border">
+                    <div class="team-name"></div>
+                    <div id="count-guessed">0</div>
+                    <div>Guessed</div>
+                </div>
+                <div
+                    id="swipe-area"
+                    class="flex-container justify-center align-center">
+                    <div class="help-text">
+                        Swipe up if guessed or down if not
+                    </div>
+                    <div
+                        id="control"
+                        class="start-button flex-container justify-center align-center hoverable">
+                        Start
+                    </div>
+                    <div id="pc-controls">
+                        <div id="add-guess" class="hoverable">Guess</div>
+                        <div id="add-miss" class="hoverable">Miss</div>
+                    </div>
+                </div>
+                <div
+                    id="missed-words"
+                    class="flex-container flex-column align-center bubble flip left-border">
+                    <div>Missed</div>
+                    <div id="count-missed">0</div>
+                    <div id="round-timer">00:00</div>
+                </div>
+            </section>
+            <div id="who-guessed">
+                <div>Choose team who guessed the last word:</div>
+            </div>
+
+            <section
+                id="after-round"
+                class="flex-container flex-column game-state">
+                <div class="info bubble right-border">
+                    <div>Round Points</div>
+                    <div id="after-round-info"></div>
+                </div>
+
+                <div id="words-list" class="outer-container"></div>
+
+                <div
+                    id="continue"
+                    class="flex-container justify-center align-center run-button">
+                    Continue
+                </div>
+            </section>
         </div>
-        <div id="outer-links" class="flex-container">
-            <div class="outer-link">
-                <a href="https://www.linkedin.com/in/dima-bulavenko-07a162239/" target="_blank" rel="noopener"
-                    aria-label="Visit my LinkedIn page (open in new tab)">
-                    <i class="fa-brands fa-linkedin font-aw-icon"></i>
-                </a>
-            </div>
-            <div class="outer-link">
-                <a href="https://github.com/Dima-Bulavenko/alias" target="_blank" rel="noopener"
-                    aria-label="Visit GitHub repository of this project (open in new tab)">
-                    <i class="fa-brands fa-square-github font-aw-icon"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-    <div id="content">
-        <section id="before-round" class="game-state flex-container flex-column justify-space-between">
-            <div id="stat-container" class="bubble right-border">
-                <div class="stat-info-container flex-container align-center justify-space-between">
-                    <div>Amount of words to win</div>
-                    <div id="word-count"></div>
-                </div>
-                <div id="stat"></div>
-            </div>
-            <div id="round-info" class="flex-container flex-column justify-center align-center">
-                <div id="round-count"></div>
-                <div class="second-text">prepare for the round</div>
-                <div id="prepared-team"></div>
-            </div>
-            <button id="run-round" class="run-button">
-                Let's go
-            </button>
-        </section>
-
-        <section id="round" class="game-state flex-container flex-column justify-space-between align-center">
-            <div id="guessed-words" class="flex-container flex-column align-center bubble right-border">
-                <div class="team-name"></div>
-                <div id="count-guessed">0</div>
-                <div>Guessed</div>
-            </div>
-            <div id="swipe-area" class="flex-container justify-center align-center">
-                <div class="help-text">
-                    Swipe up if guessed or down if not
-                </div>
-                <div id="control" class="start-button flex-container justify-center align-center hoverable">
-                    Start
-                </div>
-                <div id="pc-controls">
-                    <div id="add-guess" class="hoverable">Guess</div>
-                    <div id="add-miss" class="hoverable">Miss</div>
-                </div>
-            </div>
-            <div id="missed-words" class="flex-container flex-column align-center bubble flip left-border">
-                <div>Missed</div>
-                <div id="count-missed">0</div>
-                <div id="round-timer">00:00</div>
-            </div>
-        </section>
-        <div id="who-guessed">
-            <div>Choose team who guessed the last word:</div>
-        </div>
-
-        <section id="after-round" class="flex-container flex-column game-state">
-            <div class="info bubble right-border">
-                <div>Round Points</div>
-                <div id="after-round-info">
-
-                </div>
-            </div>
-
-            <div id="words-list" class="outer-container">
-            </div>
-
-            <div id="continue" class="flex-container justify-center align-center run-button">Continue</div>
-        </section>
-    </div>
-    <script src="./assets/js/script.js" type="module"></script>
-    <script src="./assets/js/game_handler.js" type="module"></script>
-</body>
-
+        <script src="./assets/js/script.js" type="module"></script>
+        <script src="./assets/js/game_handler.js" type="module"></script>
+    </body>
 </html>

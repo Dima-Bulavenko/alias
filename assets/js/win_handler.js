@@ -1,4 +1,4 @@
-import { getGameOptions } from "./script.js"
+import { getGameOptions } from "./script.js";
 
 function getWinnerIndex() {
     const gameOptions = getGameOptions();
@@ -15,7 +15,7 @@ function getWinnerIndex() {
     return winnerIndex;
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener("DOMContentLoaded", function () {
     const teams = getGameOptions().teams;
     const winnerIndex = getWinnerIndex();
     const winner = teams.splice(winnerIndex, 1)[0];
@@ -36,6 +36,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
     teamInfoElement.remove();
 
-    document.querySelector("#menu")
-        .addEventListener("click", event => window.location.href = "./index.html");
-})
+    document
+        .querySelector("#menu")
+        .addEventListener(
+            "click",
+            (event) => (window.location.href = "./index.html")
+        );
+});

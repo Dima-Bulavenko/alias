@@ -3,18 +3,18 @@
  */
 function setValueAndProgress(input) {
     if (input.type === "range") {
-
         // Set input value to show a user
-        input.parentElement.querySelector(".setting-value").innerText = input.value
+        input.parentElement.querySelector(".setting-value").innerText =
+            input.value;
 
         // Calculate progress
-        const progress = (input.value - input.min) / (input.max - input.min) * 100;
+        const progress =
+            ((input.value - input.min) / (input.max - input.min)) * 100;
 
         // Set input progress
-        input.style.background = `linear-gradient(to right, var(--main-color) ${progress}%, var(--text) ${progress}%)`
+        input.style.background = `linear-gradient(to right, var(--main-color) ${progress}%, var(--text) ${progress}%)`;
     }
 }
-
 
 /**
  * Checks if teams are set up. If not, prompts user and redirects based on user's choice.
@@ -26,7 +26,9 @@ function validateTeams() {
     // Validate teams
     if (!Array.isArray(teams) || teams.length < 2) {
         // Prompt user
-        let userConfirmation = confirm("No teams set up. Click OK to set up teams, or Cancel to return to the main page.");
+        let userConfirmation = confirm(
+            "No teams set up. Click OK to set up teams, or Cancel to return to the main page."
+        );
 
         // Redirect based on user's choice
         if (userConfirmation) {
@@ -36,7 +38,6 @@ function validateTeams() {
         }
     }
 }
-
 
 /**
  * saveSettings function retrieves game options from local storage, updates settings based on user input, and saves it back to local storage.
@@ -64,11 +65,10 @@ function saveSettings() {
     localStorage.setItem("gameOptions", JSON.stringify(gameOptions));
 }
 
-
 window.addEventListener("DOMContentLoaded", function () {
     validateTeams();
 
-    const rangeInput = document.querySelectorAll('.range-input');
+    const rangeInput = document.querySelectorAll(".range-input");
 
     document.querySelector("#next").addEventListener("click", function (event) {
         event.preventDefault();
@@ -76,17 +76,14 @@ window.addEventListener("DOMContentLoaded", function () {
         saveSettings();
 
         window.location.href = this.href;
-    })
+    });
 
     for (let input of rangeInput) {
-
         // Set  a value of range input and a progress
         setValueAndProgress(input);
 
-        input.addEventListener('input', function () {
-            setValueAndProgress(this)
-        })
-
+        input.addEventListener("input", function () {
+            setValueAndProgress(this);
+        });
     }
-})
-
+});

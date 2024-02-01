@@ -1,113 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Favicons -->
+        <link
+            type="image/png"
+            sizes="16x16"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-16.png" />
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-32.png" />
+        <link
+            type="image/png"
+            sizes="96x96"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-96.png" />
+        <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="76x76"
+            href="./assets/images/favicons/bubbles-76.png" />
 
-    <!-- Favicons -->
-    <link type="image/png" sizes="16x16" rel="icon" href="./assets/images/favicons/bubbles-16.png">
-    <link type="image/png" sizes="32x32" rel="icon" href="./assets/images/favicons/bubbles-32.png">
-    <link type="image/png" sizes="96x96" rel="icon" href="./assets/images/favicons/bubbles-96.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="./assets/images/favicons/bubbles-76.png">
+        <!-- Font awesome -->
+        <script
+            src="https://kit.fontawesome.com/e212569926.js"
+            crossorigin="anonymous"></script>
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/e212569926.js" crossorigin="anonymous"></script>
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet" />
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Document</title>
+    </head>
 
-    <title>Document</title>
-</head>
-
-<body>
-    <header class="flex-container justify-space-between align-center">
-        <div id="navigation" class="flex-container">
-            <div class="nav-item nav-active">
-                <a href="./index.html" class="navigation-item">
-                    <img src="./assets/images/a-100.png" alt="Home">
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="./rules.html" class="navigation-item">
-                    <img src="./assets/images/question-mark-100.png" alt="Rules">
-                </a>
-            </div>
-        </div>
-        <div id="outer-links" class="flex-container">
-            <div class="outer-link">
-                <a href="https://www.linkedin.com/in/dima-bulavenko-07a162239/" target="_blank" rel="noopener"
-                    aria-label="Visit my LinkedIn page (open in new tab)">
-                    <i class="fa-brands fa-linkedin font-aw-icon"></i>
-                </a>
-            </div>
-            <div class="outer-link">
-                <a href="https://github.com/Dima-Bulavenko/alias" target="_blank" rel="noopener"
-                    aria-label="Visit GitHub repository of this project (open in new tab)">
-                    <i class="fa-brands fa-square-github font-aw-icon"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-    <div id="content" class="flex-container flex-column align-center justify-space-between">
-        <a id="logo-container" class="flex-container align-center justify-center main-background" href="./index.html">
-            <h1 id="logo">alias</h1>
-        </a>
-        <div id="rules-section" class="outer-container">
-            <div id="rules-container"
-                class=".inner-container flex-container flex-column align-center justify-space-between">
-                <div id="game-name">
-                    Alias
+    <body>
+        <header class="flex-container justify-space-between align-center">
+            <div id="navigation" class="flex-container">
+                <div class="nav-item nav-active">
+                    <a href="./index.html" class="navigation-item">
+                        <img src="./assets/images/a-100.png" alt="Home" />
+                    </a>
                 </div>
-                <div class="rule-item flex-container align-center">
-                    <div class="rule-icon"><i class="fa-regular fa-circle-check"></i></div>
-                    <div class="rule-text">The task of each player is to explain as many words as possible to their
-                        teammates in a limited time.</div>
-                </div>
-                <div class="rule-item flex-container align-center">
-                    <div class="rule-icon"><i class="fa-regular fa-circle-xmark"></i></div>
-                    <div class="rule-text">During the explanation, it is forbidden to use the root of the word, to make
-                        sounds similar to the word, and to translate from foreign languages.</div>
-                </div>
-                <div class="rule-item flex-container align-center">
-                    <div class="rule-icon"><i class="fa-solid fa-circle-plus"></i></div>
-                    <div class="rule-text">A correctly guessed word brings the team one point, and for a missed word the
-                        team gets a penalty (depending on the settings).</div>
-                </div>
-                <div class="rule-item flex-container align-center">
-                    <div class="rule-icon"><i class="fa-solid fa-crown"></i></div>
-                    <div class="rule-text">The winner is the team that reaches a predetermined number of points.</div>
+                <div class="nav-item">
+                    <a href="./rules.html" class="navigation-item">
+                        <img
+                            src="./assets/images/question-mark-100.png"
+                            alt="Rules" />
+                    </a>
                 </div>
             </div>
-        </div>
-        <div id="options" class="relative flex-container flex-column align-center justify-center">
-            <a href="./teams.html" id="start-game"
-                class="main-background option-item flex-container align-center justify-center run-button">
-                Start Game
+            <div id="outer-links" class="flex-container">
+                <div class="outer-link">
+                    <a
+                        href="https://www.linkedin.com/in/dima-bulavenko-07a162239/"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit my LinkedIn page (open in new tab)">
+                        <i class="fa-brands fa-linkedin font-aw-icon"></i>
+                    </a>
+                </div>
+                <div class="outer-link">
+                    <a
+                        href="https://github.com/Dima-Bulavenko/alias"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit GitHub repository of this project (open in new tab)">
+                        <i class="fa-brands fa-square-github font-aw-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div
+            id="content"
+            class="flex-container flex-column align-center justify-space-between">
+            <a
+                id="logo-container"
+                class="flex-container align-center justify-center main-background"
+                href="./index.html">
+                <h1 id="logo">alias</h1>
             </a>
-            <a href="./rules.html" id="rules"
-                class="main-background option-item flex-container align-center justify-center">
-                Rules
-            </a>
-            <div class="wave">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="shape-fill"></path>
-                </svg>
+            <div id="rules-section" class="outer-container">
+                <div
+                    id="rules-container"
+                    class=".inner-container flex-container flex-column align-center justify-space-between">
+                    <div id="game-name">Alias</div>
+                    <div class="rule-item flex-container align-center">
+                        <div class="rule-icon">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div class="rule-text">
+                            The task of each player is to explain as many words
+                            as possible to their teammates in a limited time.
+                        </div>
+                    </div>
+                    <div class="rule-item flex-container align-center">
+                        <div class="rule-icon">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="rule-text">
+                            During the explanation, it is forbidden to use the
+                            root of the word, to make sounds similar to the
+                            word, and to translate from foreign languages.
+                        </div>
+                    </div>
+                    <div class="rule-item flex-container align-center">
+                        <div class="rule-icon">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </div>
+                        <div class="rule-text">
+                            A correctly guessed word brings the team one point,
+                            and for a missed word the team gets a penalty
+                            (depending on the settings).
+                        </div>
+                    </div>
+                    <div class="rule-item flex-container align-center">
+                        <div class="rule-icon">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <div class="rule-text">
+                            The winner is the team that reaches a predetermined
+                            number of points.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="options"
+                class="relative flex-container flex-column align-center justify-center">
+                <a
+                    href="./teams.html"
+                    id="start-game"
+                    class="main-background option-item flex-container align-center justify-center run-button">
+                    Start Game
+                </a>
+                <a
+                    href="./rules.html"
+                    id="rules"
+                    class="main-background option-item flex-container align-center justify-center">
+                    Rules
+                </a>
+                <div class="wave">
+                    <svg
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1200 120"
+                        preserveAspectRatio="none">
+                        <path
+                            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                            class="shape-fill"></path>
+                    </svg>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="./assets/js/script.js" type="module"></script>
-</body>
-
+        <script src="./assets/js/script.js" type="module"></script>
+    </body>
 </html>

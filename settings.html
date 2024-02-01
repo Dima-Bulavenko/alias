@@ -1,131 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Favicons -->
-    <link type="image/png" sizes="16x16" rel="icon" href="./assets/images/favicons/bubbles-16.png">
-    <link type="image/png" sizes="32x32" rel="icon" href="./assets/images/favicons/bubbles-32.png">
-    <link type="image/png" sizes="96x96" rel="icon" href="./assets/images/favicons/bubbles-96.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="./assets/images/favicons/bubbles-76.png">
+        <!-- Favicons -->
+        <link
+            type="image/png"
+            sizes="16x16"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-16.png" />
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-32.png" />
+        <link
+            type="image/png"
+            sizes="96x96"
+            rel="icon"
+            href="./assets/images/favicons/bubbles-96.png" />
+        <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="76x76"
+            href="./assets/images/favicons/bubbles-76.png" />
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/e212569926.js" crossorigin="anonymous"></script>
+        <!-- Font awesome -->
+        <script
+            src="https://kit.fontawesome.com/e212569926.js"
+            crossorigin="anonymous"></script>
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <title>Settings</title>
-</head>
+        <title>Settings</title>
+    </head>
 
-<body>
-    <header class="flex-container justify-space-between align-center">
-        <div id="navigation" class="flex-container">
-            <div class="nav-item">
-                <a href="./index.html" class="navigation-item">
-                    <img src="./assets/images/a-100.png" alt="Home">
-                </a>
+    <body>
+        <header class="flex-container justify-space-between align-center">
+            <div id="navigation" class="flex-container">
+                <div class="nav-item">
+                    <a href="./index.html" class="navigation-item">
+                        <img src="./assets/images/a-100.png" alt="Home" />
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="./rules.html" class="navigation-item">
+                        <img
+                            src="./assets/images/question-mark-100.png"
+                            alt="Rules" />
+                    </a>
+                </div>
             </div>
-            <div class="nav-item">
-                <a href="./rules.html" class="navigation-item">
-                    <img src="./assets/images/question-mark-100.png" alt="Rules">
-                </a>
+            <div id="outer-links" class="flex-container">
+                <div class="outer-link">
+                    <a
+                        href="https://www.linkedin.com/in/dima-bulavenko-07a162239/"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit my LinkedIn page (open in new tab)">
+                        <i class="fa-brands fa-linkedin font-aw-icon"></i>
+                    </a>
+                </div>
+                <div class="outer-link">
+                    <a
+                        href="https://github.com/Dima-Bulavenko/alias"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Visit GitHub repository of this project (open in new tab)">
+                        <i class="fa-brands fa-square-github font-aw-icon"></i>
+                    </a>
+                </div>
             </div>
+        </header>
+        <div
+            id="content"
+            class="flex-container flex-column justify-space-between">
+            <div id="settings-container" class="left-settings outer-container">
+                <h1 class="game-difficulty">Choose settings for the game</h1>
+                <div class="settings inner-container">
+                    <div
+                        class="setting-container flex-container flex-column justify-space-between">
+                        <div
+                            class="setting-info flex-container justify-space-between align-start">
+                            <div class="setting-name">
+                                Word count
+                                <div class="setting-description">
+                                    needed for victory
+                                </div>
+                            </div>
+                            <div class="setting-value"></div>
+                        </div>
+                        <input
+                            type="range"
+                            id="word-count"
+                            name="wordCount"
+                            aria-label="word count"
+                            class="range-input"
+                            min="10"
+                            max="150"
+                            step="5"
+                            value="30" />
+                    </div>
+                    <div
+                        class="setting-container flex-container flex-column justify-space-between">
+                        <div
+                            class="setting-info flex-container justify-space-between align-start">
+                            <div class="setting-name">
+                                Round duration
+                                <div class="setting-description">
+                                    time in seconds
+                                </div>
+                            </div>
+                            <div class="setting-value"></div>
+                        </div>
+                        <input
+                            type="range"
+                            id="round-duration"
+                            aria-label="round duration"
+                            name="roundDuration"
+                            class="range-input"
+                            min="10"
+                            max="120"
+                            step="5"
+                            value="60" />
+                    </div>
+                    <div
+                        class="setting-container flex-container justify-space-between">
+                        <div
+                            class="setting-info flex-container justify-space-between align-start">
+                            <div class="setting-name">
+                                Penalty for a miss
+                                <div class="setting-description">
+                                    each missed word deducts one point
+                                </div>
+                            </div>
+                            <div class="setting-value"></div>
+                        </div>
+                        <label for="penalty-miss" class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="penalty-miss"
+                                class="checkbox-input"
+                                name="penaltyMiss"
+                                aria-label="missed word deducts one point"
+                                checked />
+                        </label>
+                    </div>
+                    <div
+                        class="setting-container flex-container justify-space-between">
+                        <div
+                            class="setting-info flex-container justify-space-between align-start">
+                            <div class="setting-name">
+                                Common final word
+                                <div class="setting-description">
+                                    all teams can guess the last word
+                                </div>
+                            </div>
+                            <div class="setting-value"></div>
+                        </div>
+                        <label for="common-final-word" class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="common-final-word"
+                                class="checkbox-input"
+                                name="commonFinalWord"
+                                aria-label="all teams can guess the last word"
+                                checked />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <a
+                href="categories.html"
+                id="next"
+                class="flex-container justify-center align-center run-button hoverable"
+                >Next</a
+            >
         </div>
-        <div id="outer-links" class="flex-container">
-            <div class="outer-link">
-                <a href="https://www.linkedin.com/in/dima-bulavenko-07a162239/" target="_blank" rel="noopener"
-                    aria-label="Visit my LinkedIn page (open in new tab)">
-                    <i class="fa-brands fa-linkedin font-aw-icon"></i>
-                </a>
-            </div>
-            <div class="outer-link">
-                <a href="https://github.com/Dima-Bulavenko/alias" target="_blank" rel="noopener"
-                    aria-label="Visit GitHub repository of this project (open in new tab)">
-                    <i class="fa-brands fa-square-github font-aw-icon"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-    <div id="content" class=" flex-container flex-column justify-space-between">
-        <div id="settings-container" class="left-settings outer-container">
-            <h1 class="game-difficulty">Choose settings for the game</h1>
-            <div class="settings inner-container">
-                <div class="setting-container flex-container flex-column justify-space-between">
-                    <div class="setting-info flex-container justify-space-between align-start">
-                        <div class="setting-name">
-                            Word count
-                            <div class="setting-description">
-                                needed for victory
-                            </div>
-                        </div>
-                        <div class="setting-value"></div>
-                    </div>
-                    <input type="range" id="word-count" name="wordCount" aria-label="word count" class="range-input"
-                        min="10" max="150" step="5" value="30">
-                </div>
-                <div class="setting-container flex-container flex-column justify-space-between">
-                    <div class="setting-info flex-container justify-space-between align-start">
-                        <div class="setting-name">
-                            Round duration
-                            <div class="setting-description">
-                                time in seconds
-                            </div>
-                        </div>
-                        <div class="setting-value"></div>
-                    </div>
-                    <input type="range" id="round-duration" aria-label="round duration" name="roundDuration"
-                        class="range-input" min="10" max="120" step="5" value="60">
-                </div>
-                <div class="setting-container flex-container justify-space-between">
-                    <div class="setting-info flex-container justify-space-between align-start">
-                        <div class="setting-name">
-                            Penalty for a miss
-                            <div class="setting-description">
-                                each missed word deducts one point
-                            </div>
-                        </div>
-                        <div class="setting-value"></div>
-                    </div>
-                    <label for="penalty-miss" class="checkbox-label">
-                        <input type="checkbox" id="penalty-miss" class="checkbox-input" name="penaltyMiss"
-                            aria-label="missed word deducts one point" checked>
-                    </label>
-                </div>
-                <div class="setting-container flex-container justify-space-between">
-                    <div class="setting-info flex-container justify-space-between align-start">
-                        <div class="setting-name">
-                            Common final word
-                            <div class="setting-description">
-                                all teams can guess the last word
-                            </div>
-                        </div>
-                        <div class="setting-value"></div>
-                    </div>
-                    <label for="common-final-word" class="checkbox-label">
-                        <input type="checkbox" id="common-final-word" class="checkbox-input" name="commonFinalWord"
-                            aria-label="all teams can guess the last word" checked>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <a href="categories.html" id="next"
-            class="flex-container justify-center align-center run-button hoverable">Next</a>
-    </div>
-    <script src="./assets/js/script.js" type="module"></script>
-    <script src="./assets/js/settings_handler.js" type="module"></script>
-
-</body>
-
+        <script src="./assets/js/script.js" type="module"></script>
+        <script src="./assets/js/settings_handler.js" type="module"></script>
+    </body>
 </html>

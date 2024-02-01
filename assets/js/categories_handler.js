@@ -18,26 +18,25 @@ function createWordList() {
 
     // Fetch the JSON file and save it to the gameOptions object
     fetch(path)
-        .then(response => {
+        .then((response) => {
             // Check if the response is OK
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
-        .then(data => {
+        .then((data) => {
             // Save the words to the gameOptions object
             gameOptions.words = data;
             setGameOptions(gameOptions);
 
             // Redirect to the game page
             window.location.href = "./game.html";
-
         })
-        .catch(error => {
+        .catch((error) => {
             // If there is an error, disable the page and show an alert
             document.querySelector("body").classList.add("disabled");
-            alert("Something went wrong. Please reload the page.")
+            alert("Something went wrong. Please reload the page.");
         });
 }
 
@@ -60,10 +59,8 @@ function setType(event) {
     createWordList();
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    document.querySelectorAll(".category-container").forEach(element => {
-        element.addEventListener('click', setType)
-    })
-})
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".category-container").forEach((element) => {
+        element.addEventListener("click", setType);
+    });
+});

@@ -9,12 +9,10 @@ function toggleSection() {
     for (let stage of gameOptions.stages) {
         let stageElement = document.getElementById(stage.name);
 
-        if (!(stage.isCurrent)) {
-
+        if (!stage.isCurrent) {
             // Hide the section if it's not current
             stageElement.style.display = "none";
         } else {
-
             // Show the section if it's current
             stageElement.style.removeProperty("display");
         }
@@ -22,10 +20,10 @@ function toggleSection() {
 }
 
 /**
-* Toggles the current stage in the game options.
-* If the current stage is the last one, it sets the first stage as the current stage.
-* Otherwise, it sets the next stage as the current stage.
-*/
+ * Toggles the current stage in the game options.
+ * If the current stage is the last one, it sets the first stage as the current stage.
+ * Otherwise, it sets the next stage as the current stage.
+ */
 function toggleStage() {
     const gameOptions = getGameOptions();
     let newStaged;
@@ -33,17 +31,14 @@ function toggleStage() {
     for (let [index, stage] of gameOptions.stages.entries()) {
         // If the stage is the current stage
         if (stage.isCurrent) {
-
             // Set the current stage's isCurrent property to false
             stage.isCurrent = false;
 
             // If the current stage is the last stage
             if (index === gameOptions.stages.length - 1) {
-
                 // Set the first stage as the new current stage
                 newStaged = gameOptions.stages[0];
             } else {
-
                 // Otherwise, set the next stage as the new current stage
                 newStaged = gameOptions.stages[index + 1];
             }
@@ -59,7 +54,6 @@ function toggleStage() {
     setGameOptions(gameOptions);
 
     loadPageHandler();
-
 }
 
 // FUNCTIONS TO HANDLE THE "before-round" STAGE
@@ -81,7 +75,9 @@ function setTeamStats() {
     let teamStatHTML = ``;
     for (let [index, team] of getGameOptions().teams.entries()) {
         teamStatHTML += `
-                            <div class="team-stat-item flex-container justify-space-between flex-container justify-space-between" id=team-${index + 1}>
+                            <div class="team-stat-item flex-container justify-space-between flex-container justify-space-between" id=team-${
+                                index + 1
+                            }>
                                 <div class="name">${team.name}</div>
                                 <div class="score">${team.score}</div>
                             </div>`;
@@ -89,7 +85,6 @@ function setTeamStats() {
 
     statElement.innerHTML = teamStatHTML;
 }
-
 
 /**
  * Set round information to the DOM
@@ -107,7 +102,6 @@ function setRoundInfo() {
     }
 }
 
-
 /**
  * Runs all function to set up the "before-round" stage
  */
@@ -115,11 +109,10 @@ function setupBeforeRoundStage() {
     setWordCount();
     setTeamStats();
     setRoundInfo();
-    document.getElementById('run-round').addEventListener('click', toggleStage)
+    document.getElementById("run-round").addEventListener("click", toggleStage);
 }
 
 // ---------------------------------------------------------------
-
 
 // FUNCTIONS TO HANDLE THE "round" STAGE
 
@@ -132,12 +125,12 @@ function setTeamName() {
 
     for (let team of gameOptions.teams) {
         if (team.isTurn) {
-            roundSectionElement.querySelector(".team-name").innerText = team.name;
-            break
+            roundSectionElement.querySelector(".team-name").innerText =
+                team.name;
+            break;
         }
     }
 }
-
 
 /**
  * Get a random word from the gameOptions word list
@@ -149,7 +142,6 @@ function getRandomWord() {
     setGameOptions(gameOptions);
     return word;
 }
-
 
 /**
  * Count a guessed and missed words and save them to the roundWords.
@@ -168,13 +160,11 @@ function countWords(isGuessed) {
     gameOptions.roundWords.push({
         word: word,
         isGuessed: isGuessed,
-        team: gameOptions.teams.findIndex(team => team.isTurn),
-        isCommon: checkIsRoundFinished()
+        team: gameOptions.teams.findIndex((team) => team.isTurn),
+        isCommon: checkIsRoundFinished(),
     });
     setGameOptions(gameOptions);
-
 }
-
 
 /**
  * Delete the control element
@@ -182,7 +172,6 @@ function countWords(isGuessed) {
 function deleteControl(control) {
     control.remove();
 }
-
 
 /**
  * Create a control element and return it
@@ -192,11 +181,11 @@ function createControl() {
 
     const control = document.createElement("div");
     control.id = "control";
-    control.className = "flex-container justify-center align-center word-control";
+    control.className =
+        "flex-container justify-center align-center word-control";
     control.innerText = word;
     return control;
 }
-
 
 /**
  * Format time to MM:SS
@@ -205,28 +194,26 @@ function formatTime(seconds) {
     let minutes = Math.floor(seconds / 60);
     let remainingSeconds = seconds % 60;
 
-    if (minutes < 10) minutes = '0' + minutes;
-    if (remainingSeconds < 10) remainingSeconds = '0' + remainingSeconds;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (remainingSeconds < 10) remainingSeconds = "0" + remainingSeconds;
 
-    return minutes + ':' + remainingSeconds;
+    return minutes + ":" + remainingSeconds;
 }
-
 
 function checkIsRoundFinished() {
     let time = document.getElementById("round-timer").innerText;
     return time === "00:00";
 }
 
-
 /**
  * Create a list of teams to choose who could guess the last word
  */
 function handleLastWord() {
     const gameOptions = getGameOptions();
-    const whoGuessedElement = document.getElementById("who-guessed")
+    const whoGuessedElement = document.getElementById("who-guessed");
 
     for (let [index, team] of gameOptions.teams.entries()) {
-        let teamElement = document.createElement("div")
+        let teamElement = document.createElement("div");
         teamElement.className = "team";
         teamElement.dataset.teamIndex = index;
         teamElement.innerText = team.name;
@@ -237,12 +224,16 @@ function handleLastWord() {
             const roundWords = gameOptions.roundWords;
 
             // Take last item in roundWords and set team property to team hwo guessed the last word
-            roundWords[roundWords.length - 1].team = parseInt(this.dataset.teamIndex);
+            roundWords[roundWords.length - 1].team = parseInt(
+                this.dataset.teamIndex
+            );
 
             whoGuessedElement.style.display = "none";
-            whoGuessedElement.querySelectorAll(".team").forEach(team => team.remove());
+            whoGuessedElement
+                .querySelectorAll(".team")
+                .forEach((team) => team.remove());
             setGameOptions(gameOptions);
-        })
+        });
     }
 
     whoGuessedElement.style.display = "block";
@@ -270,7 +261,7 @@ function swipeHandler() {
     let maxSwipeDistance = 70;
 
     /**
-     * Handle the touch start event 
+     * Handle the touch start event
      */
     function handleTouchStart(event) {
         event.preventDefault();
@@ -287,17 +278,14 @@ function swipeHandler() {
         }
     }
 
-
     /**
-     * Handle the touch move event 
+     * Handle the touch move event
      */
     function handleTouchMove(event) {
         event.preventDefault();
-        [...event.changedTouches].forEach(touch => {
-
+        [...event.changedTouches].forEach((touch) => {
             // Check whether a touch is the first touch
             if (touch.identifier === firstTouchId) {
-
                 // Calculate the swipe distance of current touch
                 const swipeDistance = touch.pageY - touchStartY;
 
@@ -317,14 +305,25 @@ function swipeHandler() {
                     const controlTop = parseInt(control.style.top);
 
                     // Remove event listeners to prevent the swipe event from being triggered again
-                    swipeAreaElement.removeEventListener("touchstart", handleTouchStart);
-                    swipeAreaElement.removeEventListener("touchmove", handleTouchMove);
-                    swipeAreaElement.removeEventListener("touchend", handleTouchEnd);
+                    swipeAreaElement.removeEventListener(
+                        "touchstart",
+                        handleTouchStart
+                    );
+                    swipeAreaElement.removeEventListener(
+                        "touchmove",
+                        handleTouchMove
+                    );
+                    swipeAreaElement.removeEventListener(
+                        "touchend",
+                        handleTouchEnd
+                    );
 
                     // Set transition to animate the swipe of control element before running handleRound function
                     control.style.transition = `${delay}s linear`;
                     control.style.opacity = "0";
-                    control.style.transform = `translate(0, ${controlTop > 0 ? '150' : '-150'}px) scale(0.5)`;
+                    control.style.transform = `translate(0, ${
+                        controlTop > 0 ? "150" : "-150"
+                    }px) scale(0.5)`;
 
                     // Run handleRound function after the delay
                     setTimeout(handleRound, delay * 1000 + 100, isGuessed);
@@ -333,17 +332,15 @@ function swipeHandler() {
                 // id the swipe distance is less than the maximum swipe distance, move the control element
                 control.style.top = `${swipeDistance}px`;
             }
-        })
+        });
     }
 
-
     /**
-     * Handle the touch end event 
+     * Handle the touch end event
      */
     function handleTouchEnd(event) {
         event.preventDefault();
-        [...event.changedTouches].forEach(touch => {
-
+        [...event.changedTouches].forEach((touch) => {
             // Check whether a touch is the first touch
             if (touch.identifier === firstTouchId) {
                 let duration = 0.2;
@@ -359,30 +356,29 @@ function swipeHandler() {
                     control.style.removeProperty("position");
                 }, duration * 1000);
             }
-        })
+        });
     }
 
+    swipeAreaElement.addEventListener("touchstart", handleTouchStart);
 
-    swipeAreaElement.addEventListener("touchstart", handleTouchStart)
+    swipeAreaElement.addEventListener("touchmove", handleTouchMove);
 
-    swipeAreaElement.addEventListener("touchmove", handleTouchMove)
-
-    swipeAreaElement.addEventListener("touchend", handleTouchEnd)
+    swipeAreaElement.addEventListener("touchend", handleTouchEnd);
 }
-
 
 function handlePCControls() {
     const control = document.getElementById("control");
-    const isGuessed = this.id === 'add-guess';
+    const isGuessed = this.id === "add-guess";
     const delay = 0.2;
 
     control.style.transition = `${delay}s linear`;
     control.style.opacity = "0";
-    control.style.transform = `translate(${isGuessed ? "-" : ""}500px, 0) scale(0.5)`;
+    control.style.transform = `translate(${
+        isGuessed ? "-" : ""
+    }500px, 0) scale(0.5)`;
 
     setTimeout(handleRound, delay * 1000 + 100, isGuessed);
 }
-
 
 /**
  * Execute necessary functions to implement logic of round stage.
@@ -396,20 +392,18 @@ function handleRound(isGuessed) {
     // to roundWord property of gameOptions
     countWords(isGuessed);
 
-
     deleteControl(control);
 
     // Check if round was finished
     if (checkIsRoundFinished()) {
-
         // If the last word was guessed and commonFinalWord is true
         if (gameOptions.settings.commonFinalWord && isGuessed) {
             handleLastWord();
-            document.querySelectorAll("#who-guessed .team").forEach(team => {
+            document.querySelectorAll("#who-guessed .team").forEach((team) => {
                 team.addEventListener("click", function (event) {
                     setAfterRoundStage();
                     toggleStage();
-                })
+                });
             });
         } else {
             // Just switch to next stage
@@ -426,7 +420,7 @@ function handleRound(isGuessed) {
 function startRound() {
     const gameOptions = getGameOptions();
 
-    // Get round duration and timer element 
+    // Get round duration and timer element
     let roundTime = gameOptions.settings.roundDuration;
     const timerElement = document.getElementById("round-timer");
 
@@ -439,14 +433,13 @@ function startRound() {
     controlElement.innerText = getRandomWord();
     controlElement.classList.add("word-control");
 
-
     swipeHandler();
     const roundInterval = setInterval(() => {
         --roundTime;
         if (roundTime === 0) {
-            clearInterval(roundInterval)
+            clearInterval(roundInterval);
             const helpText = document.querySelector("#swipe-area .help-text");
-            helpText.innerText = "The last word"
+            helpText.innerText = "The last word";
             helpText.style.display = "block";
         }
         timerElement.innerText = formatTime(roundTime);
@@ -454,8 +447,12 @@ function startRound() {
 
     this.removeEventListener("click", startRound);
 
-    document.getElementById("add-guess").addEventListener("click", handlePCControls);
-    document.getElementById("add-miss").addEventListener("click", handlePCControls);
+    document
+        .getElementById("add-guess")
+        .addEventListener("click", handlePCControls);
+    document
+        .getElementById("add-miss")
+        .addEventListener("click", handlePCControls);
 }
 
 /**
@@ -464,9 +461,9 @@ function startRound() {
 function setupRoundStage() {
     const roundDuration = getGameOptions().settings.roundDuration;
     setTeamName();
-    document.getElementById("round-timer").innerText = formatTime(roundDuration);
+    document.getElementById("round-timer").innerText =
+        formatTime(roundDuration);
     document.getElementById("control").addEventListener("click", startRound);
-
 }
 // ---------------------------------------------------------------
 
@@ -474,12 +471,12 @@ function setupRoundStage() {
 
 /**
  * Calculate score of one round.
-* @returns {Object} Object with team index as a key and team score as a value
+ * @returns {Object} Object with team index as a key and team score as a value
  */
 function countRoundPoints() {
     const gameOptions = getGameOptions();
     const roundWords = gameOptions.roundWords;
-    const roundPoints = {}
+    const roundPoints = {};
 
     // "gameOptions.settings.penaltyMiss" can be true or false
     // so it can be converted to 1 or 0
@@ -498,13 +495,12 @@ function countRoundPoints() {
             roundPoints[teamIndex] += 1;
 
             // If the word is not guessed and it's not common, subtract penaltyMiss points from the team score
-        } else if (!(wordObj.isGuessed) && !(wordObj.isCommon)) {
+        } else if (!wordObj.isGuessed && !wordObj.isCommon) {
             roundPoints[teamIndex] -= penaltyMiss;
         }
     }
 
     return roundPoints;
-
 }
 
 /**
@@ -519,9 +515,8 @@ function setAfterRoundInfo() {
     infoElement.innerHTML = "";
 
     for (let [teamIndex, teamPoints] of Object.entries(roundPoints)) {
-
         // if team has 0 points and it didn't play this round, don't show it
-        if (teamPoints === 0 && !(gameOptions.teams[teamIndex].isTurn)) continue;
+        if (teamPoints === 0 && !gameOptions.teams[teamIndex].isTurn) continue;
 
         let teamName = gameOptions.teams[teamIndex].name;
         let teamInfo = document.createElement("div");
@@ -539,10 +534,10 @@ function setAfterRoundInfo() {
  */
 function changeWordType(index) {
     const gameOptions = getGameOptions();
-    gameOptions.roundWords[index].isGuessed = !gameOptions.roundWords[index].isGuessed;
+    gameOptions.roundWords[index].isGuessed =
+        !gameOptions.roundWords[index].isGuessed;
     setGameOptions(gameOptions);
 }
-
 
 /**
  * Set data to "#words-list" element
@@ -562,11 +557,15 @@ function setAfterRoundWordList() {
         wordItem.className = "words-item";
 
         if (wordObj.isCommon && gameOptions.settings.commonFinalWord) {
-            commonWordText = `(${wordObj.isGuessed ? teams[wordObj.team].name : "common"})`;
+            commonWordText = `(${
+                wordObj.isGuessed ? teams[wordObj.team].name : "common"
+            })`;
         }
 
         wordItem.innerHTML = `<div class="word">${word} ${commonWordText}</div>
-                            <i class="fa-solid fa-thumbs-up ${wordObj.isGuessed ? "active" : ""}"></i>`;
+                            <i class="fa-solid fa-thumbs-up ${
+                                wordObj.isGuessed ? "active" : ""
+                            }"></i>`;
 
         wordListElement.appendChild(wordItem);
 
@@ -575,25 +574,29 @@ function setAfterRoundWordList() {
             const gameOptions = getGameOptions();
             this.classList.toggle("active");
 
-            if (wordObj.isCommon && !(wordObj.isGuessed) && gameOptions.settings.commonFinalWord) {
+            if (
+                wordObj.isCommon &&
+                !wordObj.isGuessed &&
+                gameOptions.settings.commonFinalWord
+            ) {
                 handleLastWord();
-                document.querySelectorAll("#who-guessed .team").forEach(team => {
-                    team.addEventListener("click", function (event) {
-                        changeWordType(wordIndex);
-                        countRoundPoints();
-                        setAfterRoundInfo();
-                        setAfterRoundWordList()
-                    })
-                });
+                document
+                    .querySelectorAll("#who-guessed .team")
+                    .forEach((team) => {
+                        team.addEventListener("click", function (event) {
+                            changeWordType(wordIndex);
+                            countRoundPoints();
+                            setAfterRoundInfo();
+                            setAfterRoundWordList();
+                        });
+                    });
             } else {
                 changeWordType(wordIndex);
                 countRoundPoints();
                 setAfterRoundInfo();
-                setAfterRoundWordList()
+                setAfterRoundWordList();
             }
-        })
-
-
+        });
     }
 }
 
@@ -605,7 +608,6 @@ function setAfterRoundStage() {
     setAfterRoundWordList();
     document.getElementById("continue").addEventListener("click", finishRound);
 }
-
 
 /**
  * Add round points to a team score property
@@ -634,18 +636,20 @@ function getWinner() {
     let winner = [];
 
     // Check if all teams have the same round
-    const isRoundsEqual = teams.every(team => team.round === teams[0].round);
+    const isRoundsEqual = teams.every((team) => team.round === teams[0].round);
     // Check if any team has score equal or greater than wordsAmountToWin
-    const isAnyTeamScoreEqualOrAboveWordsAmountToWin = teams.some(team => team.score >= wordsAmountToWin)
+    const isAnyTeamScoreEqualOrAboveWordsAmountToWin = teams.some(
+        (team) => team.score >= wordsAmountToWin
+    );
 
     if (isRoundsEqual && isAnyTeamScoreEqualOrAboveWordsAmountToWin) {
         let maxScore = wordsAmountToWin;
         for (let team of teams) {
             if (team.score === maxScore) {
                 // If there are more than one team with max score, add them to the winner array
-                winner.push(team)
+                winner.push(team);
             } else if (team.score > maxScore) {
-                // if the  current team score is greater than maxScore, set the team score as maxScore 
+                // if the  current team score is greater than maxScore, set the team score as maxScore
                 // and reset the winner array and add the current team to the winner array
                 winner = [team];
                 maxScore = team.score;
@@ -667,17 +671,14 @@ function setNewTeamTurnAndRound() {
     for (let [index, team] of gameOptions.teams.entries()) {
         // check if the team is on turn
         if (team.isTurn) {
-
             // Set the current team's isTurn property to false
             team.isTurn = false;
 
             // if the current team is the last team
             if (index === gameOptions.teams.length - 1) {
-
                 // Set the first team as the new current team
                 newTeam = gameOptions.teams[0];
             } else {
-
                 // Otherwise, set the next team as the new current team
                 newTeam = gameOptions.teams[index + 1];
             }
@@ -697,7 +698,7 @@ function setNewTeamTurnAndRound() {
 }
 
 /**
- * Runs necessary functions to finish the round 
+ * Runs necessary functions to finish the round
  */
 function finishRound() {
     // Calculate teams score
@@ -709,29 +710,29 @@ function finishRound() {
     // Reset roundWords property
     const gameOptions = getGameOptions();
     gameOptions.roundWords = [];
-    setGameOptions(gameOptions)
+    setGameOptions(gameOptions);
 
     if (winner) {
         // logic if game is finished
         window.location.href = "./win.html";
-        return
+        return;
     }
 
     setNewTeamTurnAndRound();
-    toggleStage()
+    toggleStage();
     window.location.reload();
 }
 
 // ---------------------------------------------------------------
 
 /**
- * Run a setup function based on the current stage name 
+ * Run a setup function based on the current stage name
  */
 function loadPageHandler() {
     const gameOptions = getGameOptions();
 
     // Get the current stage object
-    const currentStage = gameOptions.stages.find(stage => stage.isCurrent);
+    const currentStage = gameOptions.stages.find((stage) => stage.isCurrent);
 
     // Show the current stage section and hide the others
     toggleSection();
@@ -754,8 +755,8 @@ window.addEventListener("DOMContentLoaded", function () {
         gameOptions.stages = [
             { name: "before-round", isCurrent: true },
             { name: "round", isCurrent: false },
-            { name: "after-round", isCurrent: false }
-        ]
+            { name: "after-round", isCurrent: false },
+        ];
         setGameOptions(gameOptions);
     }
 
