@@ -74,17 +74,37 @@ The site's design draws inspiration from the mobile application of the game "[pl
 [Back to top](<#contents>)
 
 ## Wireframes
-[Back to top](<#contents>)
+I used [balsamiq](https://balsamiq.com/) to create wireframes
 
-## Site Structure
+### Home page on Desktop 
+![Home page Desktop](assets/images/readme/home_pc_wf.PNG)
+
+### Home page on Mobile 
+
+![Home page Mobile](assets/images/readme/home_mobile_wf.PNG)
+
+### Game page on Desktop 
+
+![Game page Desktop](assets/images/readme/game_pc_wf.PNG)
+
+###  Game page on Mobile 
+
+![Game page Mobile](assets/images/readme/game_mobile_wf.PNG)
+
 [Back to top](<#contents>)
 
 ## Color Scheme
+I used [coolors.co](https://coolors.co/) to generate this color palette.
+
 ![Color palettes.](./assets/images/readme/color_palettes.png)
 
 [Back to top](<#contents>)
 
 ## Typography
+I use [Inter Tight](https://fonts.google.com/specimen/Inter+Tight?query=Inter) font.
+
+![font](./assets/images/readme/font.png)
+
 [Back to top](<#contents>)
 
 
