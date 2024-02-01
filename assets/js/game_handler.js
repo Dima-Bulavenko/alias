@@ -445,6 +445,9 @@ function startRound() {
         --roundTime;
         if (roundTime === 0) {
             clearInterval(roundInterval)
+            const helpText = document.querySelector("#swipe-area .help-text");
+            helpText.innerText = "The last word"
+            helpText.style.display = "block";
         }
         timerElement.innerText = formatTime(roundTime);
     }, 1000);

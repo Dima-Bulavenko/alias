@@ -419,6 +419,12 @@ a {
 }
 
 /* round section */
+.help-text {
+    position: absolute;
+    top: 15%;
+    color: var(--element-off);
+}
+
 #pc-controls {
     display: none;
 }
@@ -468,6 +474,7 @@ a {
 }
 
 #swipe-area {
+    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -878,6 +885,10 @@ a {
     }
 
     /* STYLE FOR game.html */
+    .help-text {
+        display: none;
+    }
+
     .team-name {
         text-align: center;
     }
