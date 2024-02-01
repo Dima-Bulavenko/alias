@@ -29,6 +29,10 @@ body {
     flex-direction: column;
 }
 
+.hidden-hider {
+    display: none;
+}
+
 /* Style for header element */
 header {
     padding: 0px 20px;
